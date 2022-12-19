@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreAuthenticationRequest;
-use App\Http\Requests\UpdateAuthenticationRequest;
 use App\Models\Authentication as Authentication;
 use Illuminate\Http\Request;
 use Session;
@@ -55,9 +53,8 @@ class AuthenticationController extends Controller
                     return redirect('committee-profile');
                 } elseif ($role == 'Coordinator') {
                     return redirect('coordinator-profile');
-                } else {
-                    return redirect('login');
-                }
+                } 
+
             } else {
                 // custom back validator message
                 $custom_msg = [
