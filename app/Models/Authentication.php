@@ -5,7 +5,37 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Authentication extends Model
+class users extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'role', 'password', 'username', 'phone', 'email'
+    ];
+
+    public function dean()
+    {
+        return $this->hasOne(Dean::class, 'username','username');
+    }
+
+    public function student()
+    {
+        return $this->hasOne(Students::class,'username', 'username');
+    }
+
+    public function lecturer()
+    {
+        return $this->hasOne(Lecturer::class,'usernane', 'username');
+    }
+
+    public function committee()
+    {
+        return $this->hasOne(Committee::class,'username', 'username');
+    }
+
+    public function coordinator()
+    {
+        return $this->hasOne(Coordinator::class,'username', 'username');
+    }
 }
+
