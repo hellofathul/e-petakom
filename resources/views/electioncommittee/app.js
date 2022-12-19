@@ -1,11 +1,3 @@
-import './bootstrap';
-
-import Alpine from 'alpinejs';
-
-window.Alpine = Alpine;
-
-Alpine.start();
-
 const sign_in_btn = document.querySelector("#sign-in-btn");
 const sign_up_btn = document.querySelector("#sign-up-btn");
 const container = document.querySelector(".container");
@@ -26,5 +18,4 @@ sign_up_btn2.addEventListener("click", () => {
 sign_in_btn2.addEventListener("click", () => {
     container.classList.remove("sign-up-mode2");
 });
-
 
