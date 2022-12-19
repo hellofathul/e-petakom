@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Symfony\Component\Routing\Router;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,31 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::redirect('/dhiya', '/');
+
+Route::view('/pelajar', 'pelajar',
+    ['nama' => 'dhiya']);
+
+Route::get('/kelas', function(){
+    return view('go');
+});
+
+Route::post('/kelas', function(){
+    echo "<h1>POST --  Kelas Programming</h1>";
+});
+
+Route::get('/cec', function(){
+    return view('electioncommittee/ce-committee');
+});
+
+Route::get('/ces', function(){
+    return view('electioncommittee/ce-student');
+});
+
+Route::get('/ceo', function(){
+    return view('electioncommittee/ce-coordinator');
 });
 
 Route::middleware([

@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\app",
+    "\\app\\View",
+    "\\public",
+    "\\resources",
+    "\\resources\\css",
+    "\\resources\\views",
+    "\\resources\\views\\electioncommittee",
+    "\\resources\\views\\profile",
+    "\\routes"
+  ],
+  "SelectedNode": "\\resources\\views\\electioncommittee\\ce-committee.blade.php",
+  "PreviewInSolutionExplorer": false
+}
