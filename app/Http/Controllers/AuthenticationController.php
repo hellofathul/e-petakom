@@ -2,85 +2,81 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Authentication;
 use App\Http\Requests\StoreAuthenticationRequest;
 use App\Http\Requests\UpdateAuthenticationRequest;
+use App\Models\Authentication as Authentication;
+use Illuminate\Http\Request;
+use Session;
 
 class AuthenticationController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function login(Request $request)
     {
-        //
-    }
+        // Validator
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+        $messages = [
+            'username.required' => 'Username is required',
+            'password.required' => 'Password is required',
+        ];
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreAuthenticationRequest  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StoreAuthenticationRequest $request)
-    {
-        //
-    }
+        $rules = [
+            'username' => 'required',
+            'password' => 'required',
+        ];
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Authentication  $authentication
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Authentication $authentication)
-    {
-        //
-    }
+        $validator = $request->validate($rules, $messages);
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Authentication  $authentication
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Authentication $authentication)
-    {
-        //
-    }
+        $data = $request->input();
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateAuthenticationRequest  $request
-     * @param  \App\Models\Authentication  $authentication
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdateAuthenticationRequest $request, Authentication $authentication)
-    {
-        //
-    }
+        //SELECT ELOQUENT
+        $check = Authentication::where('username', $req->username)->exists();
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Authentication  $authentication
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Authentication $authentication)
-    {
-        //
+        if ($check) {
+            $Authentication = Authentication::where('username', $req->username)
+                ->get()
+                ->first();
+
+            $role = $Authentication->role;
+            $username = $Authentication->username;
+            $password = $Authentication->password;
+
+            if ($password == $data['password']) {
+                // Save into session
+                Session::put('role', $role);
+                Session::put('logged_user', $username); //put the data and in session
+
+                if ($role == 'Dean') {
+                    return redirect('dean-profile');
+                } elseif ($role == 'Students') {
+                    return redirect('students-profile');
+                } elseif ($role == 'Lecturer') {
+                    return redirect('lecturer-profile');
+                } elseif ($role == 'Committee') {
+                    return redirect('committee-profile');
+                } elseif ($role == 'Coordinator') {
+                    return redirect('coordinator-profile');
+                } else {
+                    return redirect('login');
+                }
+            } else {
+                // custom back validator message
+                $custom_msg = [
+                    'password' => 'Wrong password entered',
+                ];
+
+                // return back with custom error message
+                return redirect()->back()->withInput()->withErrors($custom_msg);
+            }
+        } else {
+            // custom back validator message
+            $custom_msg = [
+                'username' => 'Username does not exist',
+            ];
+
+            // return back with custom error message
+            return redirect()->back()->withInput()->withErrors($custom_msg);
+        }
+
+        // return $check
     }
 }
