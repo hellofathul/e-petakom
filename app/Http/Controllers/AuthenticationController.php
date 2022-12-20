@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Authentication as Authentication;
-use Illuminate\Http\Request;
 use Session;
+use App\Models\Dean;
+use Illuminate\Http\Request;
+use App\Models\Authentication as Authentication;
 
 class AuthenticationController extends Controller
 {
@@ -99,8 +100,25 @@ class AuthenticationController extends Controller
 
         $data = $request->input();
 
+        $username = $request-> username;
+        $Authentication = new Authentication;
+        $currentdt = date('d-m-Y H:i:s');
+
+        //Insert
+        $Authentication->username = $request->username;
+        $Authentication->password = $request->password;
+        $Authentication->role = $request->role;
+        // $Authentication->name = $request->name;
+        // $Authentication->email = $request->email;
+        // $Authentication->phone = $request->phone;
+        // $Authentication->created_at = $currentdt;
+        // $Authentication->updated_at = $currentdt;
+
+        $result = $Authentication->save();
+        $role = $Authentication->role;
+
         //SELECT ELOQUENT
-        $check = Authentication::where('username', $req->username)->exists();
+        $check = Authentication::where('username', $request->username)->exists();
 
         if ($check) {
             // custom back validator message
@@ -110,14 +128,44 @@ class AuthenticationController extends Controller
 
             // return back with custom error message
             return redirect()->back()->withInput()->withErrors($custom_msg);
-        } else {
-            $Authentication = new Authentication;
-            $Authentication->username = $data['username'];
-            $Authentication->password = $data['password'];
-            $Authentication->role = $data['role'];
-            $Authentication->save();
 
+        } elseif($request->role == 'Dean') {
+            $dean = new Dean;
+            $dean->username = $username;
+            $dean->save();
             return redirect('login');
-        }
+
+        } elseif($request->role == 'Student') {
+            $student = new Student;
+            $student->username = $username;
+            // DECLARE VARIABLE FROM THE INPUT REQUEST
+            $student_first_name = $request->name;
+            $student_email = $request->email;
+            $student_mobile_no = $request->phone;
+            // SAVE THE VARIABLE INTO THE DATABASE
+            $student->student_first_name = $student_first_name;
+            $student->email = $student_email;
+            $student->phone = $student_mobile_no;
+            $student->save();
+            return redirect('login');
+
+        } elseif($request->role == 'Lecturer') {
+            $dean = new Dean;
+            $dean->username = $username;
+            $dean->save();
+            return redirect('login');
+
+        } elseif($request->role == 'Coordinator') {
+            $dean = new Dean;
+            $dean->username = $username;
+            $dean->save();
+            return redirect('login');
+            
+        } elseif($request->role == 'Committee') {
+            $dean = new Dean;
+            $dean->username = $username;
+            $dean->save();
+            return redirect('login');
+        } 
     }
 }
