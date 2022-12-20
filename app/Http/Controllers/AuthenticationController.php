@@ -9,7 +9,7 @@ use App\Models\Dean as Dean;
 use App\Models\Lecturer as Lecturer;
 use App\Models\Student as Student;
 use Illuminate\Http\Request;
-use Session;
+use Illuminate\Support\Facades\Session;
 
 class AuthenticationController extends Controller
 {

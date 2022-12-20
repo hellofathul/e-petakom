@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Student;
+use App\Models\Student as students;
+use App\Models\Authentication;
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreStudentRequest;
 use App\Http\Requests\UpdateStudentRequest;
+use Illuminate\Support\Facades\DB;
 
 class StudentController extends Controller
 {
@@ -15,7 +18,13 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
+        $username = session()->get('logged_user');
+        $authentication = DB::table('authentications')
+            ->Join('students', 'authentications.username', '=', 'students.username')
+            ->where('authentication.username', '=', $username)
+            ->get();
+        return View('ManageProfile.profile-student')->with('students', $authentication);
+        //var_dump($users);
     }
 
     /**
@@ -68,7 +77,7 @@ class StudentController extends Controller
      * @param  \App\Models\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateStudentRequest $request, Student $student)
+    public function update(Request $request)
     {
         //
     }
