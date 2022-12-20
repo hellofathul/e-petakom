@@ -9,7 +9,7 @@ use App\Http\Requests\StoreCommitteeRequest;
 use App\Http\Requests\UpdateCommitteeRequest;
 use Illuminate\Support\Facades\DB;
 
-class StudentController extends Controller
+class CommitteeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -55,11 +55,11 @@ class StudentController extends Controller
         $authentications->username = $username;
         $authentications->password = $password;
         $authentications->save();
-        //table students
+        //table committees
         $committees = Committee::where('username', '=', session()->get('logged_user'))->get()->first();
         $committees->username = $username;
         $committees->password = $password;
-        $committees->student_first_name = $committee_first_name;
+        $committees->committee_first_name = $committee_first_name;
         $committees->committee_last_name = $committee_last_name;
         $committees->committee_email = $committee_email;
         $committees->committee_mobile_no = $committee_mobile_no;
@@ -80,10 +80,10 @@ class StudentController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreStudentRequest  $request
+     * @param  \App\Http\Requests\StoreCommitteeRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreStudentRequest $request)
+    public function store()
     {
         //
     }
@@ -91,10 +91,10 @@ class StudentController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Student  $student
+     * @param  \App\Models\Committee  $committee
      * @return \Illuminate\Http\Response
      */
-    public function show(Student $student)
+    public function show()
     {
         //
     }
@@ -102,25 +102,25 @@ class StudentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Student  $student
+     * @param  \App\Models\Committee  $committee
      * @return \Illuminate\Http\Response
      */
     // public function edit()
     // {
     //     $username = session()->get('logged_user');
     //     $authentications = DB::table('authentications')
-    //         ->Join('students', 'authentications.username', '=', 'students.username')
+    //         ->Join('committees', 'authentications.username', '=', 'committees.username')
     //         ->where('users.userID', '=', $username)
     //         ->get();
-    //     return View('ManageProfile.edit-profile-student')->with('students', $authentications);
-    //     // var_dump($students);
+    //     return View('ManageProfile.edit-profile-committee')->with('committees', $authentications);
+    //     // var_dump($committees);
     // }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateStudentRequest  $request
-     * @param  \App\Models\Student  $student
+     * @param  \App\Http\Requests\UpdateCommitteeRequest  $request
+     * @param  \App\Models\Committee  $committee
      * @return \Illuminate\Http\Response
      */
     public function create(Request $request)
@@ -131,10 +131,10 @@ class StudentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Student  $student
+     * @param  \App\Models\Committee  $committee
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Student $student)
+    public function destroy(Committee $committee)
     {
         //
     }
