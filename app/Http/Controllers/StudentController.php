@@ -54,10 +54,10 @@ class StudentController extends Controller
         $authentications->username = $username;
         $authentications->password = $password;
         $authentications->save();
+        
         //table students
         $students = Student::where('username', '=', session()->get('logged_user'))->get()->first();
         $students->username = $username;
-        $students->password = $password;
         $students->student_first_name = $student_first_name;
         $students->student_last_name = $student_last_name;
         $students->student_email = $student_email;
@@ -72,7 +72,6 @@ class StudentController extends Controller
         $students->student_picture = $student_picture;
         $students->save();
         return redirect("profile-student");
-
     }
 
     /**

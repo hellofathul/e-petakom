@@ -55,10 +55,10 @@ class CommitteeController extends Controller
         $authentications->username = $username;
         $authentications->password = $password;
         $authentications->save();
+
         //table committees
         $committees = Committee::where('username', '=', session()->get('logged_user'))->get()->first();
         $committees->username = $username;
-        $committees->password = $password;
         $committees->committee_first_name = $committee_first_name;
         $committees->committee_last_name = $committee_last_name;
         $committees->committee_email = $committee_email;
@@ -110,7 +110,7 @@ class CommitteeController extends Controller
     //     $username = session()->get('logged_user');
     //     $authentications = DB::table('authentications')
     //         ->Join('committees', 'authentications.username', '=', 'committees.username')
-    //         ->where('users.userID', '=', $username)
+    //         ->where('users.username', '=', $username)
     //         ->get();
     //     return View('ManageProfile.edit-profile-committee')->with('committees', $authentications);
     //     // var_dump($committees);
