@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\Routing\Router;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
