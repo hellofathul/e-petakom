@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('authentications', function (Blueprint $table) {
             $table->id();
+            $table->string('username');
+            $table->string('password');
+            $table->string('role');
+            $table->string('mobile_no');
+            $table->string('email');
             $table->timestamps();
         });
     }

@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('lecturer_email');
             $table->string('lecturer_mobile_no');
             $table->string('lecturer_office_level');
-            $table->string('lecturer_office_no');
+            $table->string('lecturer_office_wing');
             $table->string('lecturer_picture');
             $table->timestamps();
         });
