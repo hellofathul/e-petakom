@@ -33,7 +33,7 @@ Route::post('/kelas', function(){
 });
 
 Route::get('/cec', function(){
-    return view('electioncommittee/ce-committee');
+    return view('electioncommittee/ce-committee'); 
 });
 
 Route::get('/ces', function(){
