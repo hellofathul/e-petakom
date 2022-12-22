@@ -50,7 +50,7 @@ class AuthenticationController extends Controller
 
                 if ($role == 'Dean') {
                     return redirect('dean-profile');
-                } elseif ($role == 'Students') {
+                } elseif ($role == 'Student') {
                     return redirect('students-profile');
                 } elseif ($role == 'Lecturer') {
                     return redirect('lecturer-profile');

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\Routing\Router;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,32 +22,58 @@ Route::get('/', function () {
 
 Route::get('/home', function () {
     $logged_user = session()->get('logged_user');
-    $user_type = session()->get('user_type');
+    $role = session()->get('role');
 
 
     if (!$logged_user) {
-        return view('welcome');
+        return view('layouts.main');
     } else {
 
-        if ($user_type == 'Student') {
-            return redirect('studentprofile');
-        } elseif ($user_type == 'Supervisor') {
-            return redirect('supervisorprofile');
-        } elseif ($user_type == 'Technician') {
-            return redirect('technicianprofile');
+        if ($role == 'Dean') {
+            return redirect('dean-profile');
+        } elseif ($role == 'Student') {
+            return redirect('student-profile');
+        } elseif ($role == 'Lecturer') {
+            return redirect('lecturer-profile');
+        } elseif ($role == 'Committee') {
+            return redirect('committee-profile');
+        } elseif ($role == 'Coordinator') {
+            return redirect('coordinator-profile');
         }
+
     }
 });
 
-Route::view('/register', 'layouts.main');
-Route::view('/forgot', 'layouts.forgot-password');
-
+Route::view('register', 'layouts.main');
+Route::view('forgot', 'layouts.forgot-password');
 
 // AUTHENTICATION CONTROLLER
 Route::post('user_login', 'AuthenticationController@login');
 Route::post('user_register', 'AuthenticationController@register');
 Route::post('user_reset', 'AuthenticationController@resetpassword');
 Route::get('/logout', 'AuthenticationController@logout');
+
+// STUDENT CONTROLLER
+Route::get  ('student-profile', [StudentController::class, 'index']);
+Route::post  ('student_update', [StudentController::class, 'update']);
+
+// LECTURER CONTROLLER
+Route::get  ('lecturer-profile', [LecturerController::class, 'index']);
+Route::post  ('lecturer_update', [LecturerController::class, 'update']);
+
+// DEAN CONTROLLER
+Route::get  ('dean-profile', [DeanController::class, 'index']);
+Route::post  ('dean_update', [DeanController::class, 'update']);
+
+// COMMITTEE CONTROLLER
+Route::get  ('committee-profile', [CommitteeController::class, 'index']);
+Route::post  ('committee_update', [CommitteeController::class, 'update']);
+
+// COORDINATOR CONTROLLER
+Route::get  ('coordinator-profile', [CoodinatorController::class, 'index']);
+Route::post  ('coordinator_update', [CoordinatorController::class, 'update']);
+
+
 
 Route::redirect('/dhiya', '/');
 

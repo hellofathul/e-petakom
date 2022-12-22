@@ -30,7 +30,7 @@ $roles = session()->get('role');
 <body>
     <div class="container">
         <div class="signin-signup">
-            <form action="" class="sign-in-form">
+            <form action="user_login" class="sign-in-form">
                 <h2 class="title">Login</h2>
                 <div class="input-field">
                     <h4>Matric ID</h4>
@@ -43,7 +43,7 @@ $roles = session()->get('role');
                 <input type="submit" value="Login" class="btn-login">
                 <p class="account-text">Not register yet? <a href="#" id="sign-up-btn2">Create Account</a></p>
             </form>
-            <form action="" class="sign-up-form">
+            <form action="user_register" class="sign-up-form">
                 <h2 class="title">Sign up</h2>
                 <p class="account-text">Have an account? <a href="#" id="sign-in-btn2">Login</a></p>
                 <div class="dropdown">
