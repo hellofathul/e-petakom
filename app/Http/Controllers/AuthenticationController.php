@@ -48,17 +48,17 @@ class AuthenticationController extends Controller
                 Session::put('role', $role);
                 Session::put('logged_user', $username); //put the data and in session
 
-                // if ($role == 'Dean') {
-                //     return redirect('dean-profile');
-                // } elseif ($role == 'Students') {
-                //     return redirect('students-profile');
-                // } elseif ($role == 'Lecturer') {
-                //     return redirect('lecturer-profile');
-                // } elseif ($role == 'Committee') {
-                //     return redirect('committee-profile');
-                // } elseif ($role == 'Coordinator') {
-                //     return redirect('coordinator-profile');
-                // }
+                if ($role == 'Dean') {
+                    return redirect('dean-profile');
+                } elseif ($role == 'Students') {
+                    return redirect('students-profile');
+                } elseif ($role == 'Lecturer') {
+                    return redirect('lecturer-profile');
+                } elseif ($role == 'Committee') {
+                    return redirect('committee-profile');
+                } elseif ($role == 'Coordinator') {
+                    return redirect('coordinator-profile');
+                }
 
             } else {
                 // custom back validator message
