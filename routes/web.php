@@ -1,9 +1,13 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\Routing\Router;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\DeanController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\LecturerController;
+use App\Http\Controllers\CommitteeController;
+use App\Http\Controllers\CoordinatorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +48,7 @@ Route::get('/home', function () {
     }
 });
 
+// VIEW ROUTES
 Route::view('register', 'layouts.main');
 Route::view('forgot', 'layouts.forgot-password');
 
@@ -70,7 +75,7 @@ Route::get  ('committee-profile', [CommitteeController::class, 'index']);
 Route::post  ('committee_update', [CommitteeController::class, 'update']);
 
 // COORDINATOR CONTROLLER
-Route::get  ('coordinator-profile', [CoodinatorController::class, 'index']);
+Route::get  ('coordinator-profile', [CoordinatorController::class, 'index']);
 Route::post  ('coordinator_update', [CoordinatorController::class, 'update']);
 
 
