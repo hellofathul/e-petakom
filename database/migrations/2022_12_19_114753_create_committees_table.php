@@ -15,20 +15,20 @@ return new class extends Migration
     {
         Schema::create('committees', function (Blueprint $table) {
             $table->id();
-            $table->string('username');
+            $table->foreignId('username')->nullable();
             $table->string('committee_first_name');
-            $table->string('committee_last_name');
+            $table->string('committee_last_name')->nullable();
             $table->string('committee_email');
             $table->string('committee_mobile_no');
-            $table->string('committee_address');
-            $table->string('committee_city');
-            $table->string('committee_state');
-            $table->string('committee_zipcode');
-            $table->string('committee_course');
-            $table->string('committee_year');
-            $table->string('committee_semester');
-            $table->string('committee_picture');
-            $table->string('committee_position');
+            $table->string('committee_address')->nullable();
+            $table->string('committee_city')->nullable();
+            $table->string('committee_state')->nullable();
+            $table->string('committee_zipcode')->nullable();
+            $table->string('committee_course')->nullable();
+            $table->string('committee_year')->nullable();
+            $table->string('committee_semester')->nullable();
+            $table->string('committee_picture')->nullable();
+            $table->string('committee_position')->nullable();
             $table->timestamps();
         });
     }
