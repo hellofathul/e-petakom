@@ -40,22 +40,24 @@ $roles = session()->get('role');
                 <span class="m--in">Sign In</span>
             </div>
         </div>
-        <div class="form sign-up">
-            <h2>Be one of the communities,</h2>
-            <label>
-                <span>Name</span>
-                <input type="text" />
-            </label>
-            <label>
-                <span>Email</span>
-                <input type="email" />
-            </label>
-            <label>
-                <span>Password</span>
-                <input type="password" />
-            </label>
-            <button type="button" class="submit">Sign Up</button>
-        </div>
+        <form action="user_register" method="post"></form>
+            <div class="form sign-up">
+                <h2>Be one of the communities,</h2>
+                <label>
+                    <span>Name</span>
+                    <input type="text" />
+                </label>
+                <label>
+                    <span>Email</span>
+                    <input type="email" />
+                </label>
+                <label>
+                    <span>Password</span>
+                    <input type="password" />
+                </label>
+                <button type="button" class="submit">Sign Up</button>
+            </div>
+        </form>
     </div>
 </div>
 
