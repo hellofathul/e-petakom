@@ -41,7 +41,7 @@ $roles = session()->get('role');
             </div>
         </div>
         <div class="form sign-up">
-            <h2>Time to feel like home,</h2>
+            <h2>Be one of the communities,</h2>
             <label>
                 <span>Name</span>
                 <input type="text" />
