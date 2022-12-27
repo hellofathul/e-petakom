@@ -19,17 +19,12 @@ use Illuminate\Support\Facades\Route;
  */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/home', function () {
     $logged_user = session()->get('logged_user');
     $role = session()->get('role');
 
     if (!$logged_user) {
-        return view('layouts.main');
+        return view('layouts.login-signup');
     } else {
-
         if ($role == 'Dean') {
             return redirect('dean-profile');
         } elseif ($role == 'Student') {
@@ -41,7 +36,6 @@ Route::get('/home', function () {
         } elseif ($role == 'Coordinator') {
             return redirect('coordinator-profile');
         }
-
     }
 });
 

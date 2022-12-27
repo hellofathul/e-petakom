@@ -13,6 +13,10 @@ class Authentication extends Model
         'role', 'password', 'username', 'phone', 'email'
     ];
 
+    protected $hidden = [
+        'password'
+    ];
+
     public function dean()
     {
         return $this->hasOne(Dean::class, 'username','username');
