@@ -19,7 +19,7 @@ body:before {
     right: 0;
     background-image: url('https://hellofathul.s3.ap-southeast-1.amazonaws.com/FAV_1.png');
     background-size: cover;
-    opacity: 0.4;
+    opacity: 0.6;
     content: "";
     z-index: -1;
 }
