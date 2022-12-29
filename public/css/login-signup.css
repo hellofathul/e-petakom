@@ -8,7 +8,20 @@
 
 body {
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-    background: #ededed;
+    background: black;
+}
+
+body:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: url('https://hellofathul.s3.ap-southeast-1.amazonaws.com/FAV_1.png');
+    background-size: cover;
+    opacity: 0.4;
+    content: "";
+    z-index: -1;
 }
 
 input,
@@ -30,7 +43,7 @@ button {
     position: relative;
     width: 900px;
     height: 550px;
-    margin: 200px auto 100px;
+    margin: 250px auto 100px;
     background: #fff;
 }
 
