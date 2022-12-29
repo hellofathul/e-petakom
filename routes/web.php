@@ -39,6 +39,27 @@ Route::get('/', function () {
     }
 });
 
+Route::get('/login', function () {
+    $logged_user = session()->get('logged_user');
+    $role = session()->get('role');
+
+    if (!$logged_user) {
+        return view('layouts.login-signup');
+    } else {
+        if ($role == 'Dean') {
+            return redirect('dean-profile');
+        } elseif ($role == 'Student') {
+            return redirect('student-profile');
+        } elseif ($role == 'Lecturer') {
+            return redirect('lecturer-profile');
+        } elseif ($role == 'Committee') {
+            return redirect('committee-profile');
+        } elseif ($role == 'Coordinator') {
+            return redirect('coordinator-profile');
+        }
+    }
+});
+
 // VIEW ROUTES
 Route::view('register', 'layouts.main');
 Route::view('forgot', 'layouts.forgot-password');
