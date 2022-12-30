@@ -11,7 +11,8 @@ $roles = session()->get('role');
 
 <!-- Loading square for squar.red network -->
 <span class="loader"><span class="loader-inner"></span></span>
-
+<div class="square">
+</div>
 <div class="cont">
     <form action="user_login" method="post"></form>
         <div class="form sign-in">
