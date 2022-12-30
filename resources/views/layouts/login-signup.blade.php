@@ -9,6 +9,9 @@ $roles = session()->get('role');
 <!-- STYLESHEET -->
 <link rel="stylesheet" href="{{ asset('css/login-signup.css') }}">
 
+<!-- Loading square for squar.red network -->
+<span class="loader"><span class="loader-inner"></span></span>
+
 <div class="cont">
     <form action="user_login" method="post"></form>
         <div class="form sign-in">

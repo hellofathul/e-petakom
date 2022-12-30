@@ -17,9 +17,9 @@ body:before {
     left: 0;
     bottom: 0;
     right: 0;
-    background-image: url('https://hellofathul.s3.ap-southeast-1.amazonaws.com/FAV_1.png');
+    background-image: url('https://hellofathul.s3.ap-southeast-1.amazonaws.com/faculty-2.jpg');
     background-size: cover;
-    opacity: 0.6;
+    opacity: 0.5;
     content: "";
     z-index: -1;
 }
@@ -100,7 +100,7 @@ button {
     top: 0;
     width: 900px;
     height: 100%;
-    background-image: url('https://hellofathul.s3.ap-southeast-1.amazonaws.com/faculty-2.jpg');
+    background-image: url('https://hellofathul.s3.ap-southeast-1.amazonaws.com/FAV_1.png');
     background-size: cover;
     transition: transform 1.2s ease-in-out;
 }
