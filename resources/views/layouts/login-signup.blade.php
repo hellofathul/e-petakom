@@ -7,9 +7,8 @@ $roles = session()->get('role');
 ?>
 
 <!-- STYLESHEET -->
-<link rel="stylesheet" href="{{ asset('css/login-signup.css') }}">
 <link rel="stylesheet" href="{{ asset('css/dropdown-signup.css') }}">
-
+<link rel="stylesheet" href="{{ asset('css/login-signup.css') }}">
 
 <!-- Loading square for squar.red network -->
 

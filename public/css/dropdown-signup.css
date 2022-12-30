@@ -1,10 +1,13 @@
 @import "compass/css3";
 
 /* Dropdown style */
-.dropdown-user-role {
+dl .dropdown-user-role {
     width: 15em;
     margin: 0 auto;
     margin-bottom: 1em;
+    font-size: 12px;
+    color: #000000;
+    text-transform: uppercase;
 }
 
 .dropdown-user-role dt a {
@@ -18,7 +21,7 @@
 
 .dropdown-user-role dt a:hover,
 .dropdown-user-role dt a:active {
-    border-color: #bdc3c7;
+    border-color: #000000;
 }
 
 .dropdown-user-role dt span {
