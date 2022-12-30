@@ -32,7 +32,7 @@ button {
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 }
 
-.square {
+/* .square {
     justify-content: center;
     align-items: center;
     right: 2px;
@@ -41,7 +41,7 @@ button {
     height: 100px;
     width: 500px;
     background-color: transparent;
-}
+} */
 
 /* .square:before {
     content: '';
@@ -54,7 +54,7 @@ button {
     border-width: 3px 0px 3px 3px;
 } */
 
-.square:before {
+/* .square:before {
     content: '';
     justify-content: center;
     align-items: center;
@@ -65,8 +65,8 @@ button {
     width: 940px;
     border-color: rgb(255, 255, 255);
     border-style: solid;
-    border-width: 10px;
-}
+    border-width: 4px;
+} */
 
 
 
@@ -83,6 +83,9 @@ button {
     height: 550px;
     margin: 250px auto 100px;
     background: #fff;
+    border-color: rgb(255, 255, 255);
+    border-style: solid;
+    border-width: 4px;
 }
 
 .form {
@@ -150,7 +153,7 @@ button {
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .cont.s--signup .img:before {
@@ -161,7 +164,7 @@ button {
     z-index: 2;
     position: absolute;
     left: 0;
-    top: 50px;
+    top: 120px;
     width: 100%;
     padding: 0 20px;
     text-align: center;

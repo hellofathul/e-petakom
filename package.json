@@ -13,6 +13,7 @@
         "@popperjs/core": "^2.11.6",
         "@tailwindcss/forms": "^0.5.2",
         "@tailwindcss/typography": "^0.5.0",
+        "@vue/compiler-sfc": "^3.2.45",
         "alpinejs": "^3.0.6",
         "autoprefixer": "^10.4.7",
         "axios": "^1.1.2",
@@ -22,7 +23,8 @@
         "postcss": "^8.4.14",
         "resolve-url-loader": "^5.0.0",
         "sass": "^1.57.1",
-        "tailwindcss": "^3.1.0"
+        "tailwindcss": "^3.1.0",
+        "vue": "^3.2.36"
     },
     "dependencies": {
         "sass-loader": "^13.2.0"
