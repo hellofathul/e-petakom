@@ -9,12 +9,10 @@ $roles = session()->get('role');
 <!-- STYLESHEET -->
 <link rel="stylesheet" href="{{ asset('css/login-signup.css') }}">
 <link rel="stylesheet" href="{{ asset('css/dropdown-signup.css') }}">
-<script src="{{ asset('js/dropdown-signup.js') }}"></script>
+
 
 <!-- Loading square for squar.red network -->
-<span class="loader"><span class="loader-inner"></span></span>
-<div class="square">
-</div>
+
 <div class="cont">
     <form action="user_login" method="post"></form>
     <div class="form sign-in">
@@ -54,8 +52,9 @@ $roles = session()->get('role');
                     <dt><a><span>User Role</span></a></dt>
                     <dd>
                         <ul>
-                            <li><a class="default">Student</a></li>
+                            <li><a class="default">User Role</a></li>
                             <li><a>Lecturer</a></li>
+                            <li><a>Student</a></li>
                         </ul>
                     </dd>
                 </dl>
@@ -78,5 +77,9 @@ $roles = session()->get('role');
     </div>
 </div>
 
+<!-- JAVASCRIPT -->
+<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+    crossorigin="anonymous"></script>
 <script src="{{ asset('js/login-signup.js') }}"></script>
-
+<script src="{{ asset('js/app.js') }}"></script>
+<script src="{{ asset('js/dropdown-signup.js') }}"></script>

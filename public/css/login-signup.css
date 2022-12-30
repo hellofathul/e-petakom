@@ -34,44 +34,6 @@ button {
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 }
 
-/* .square {
-    justify-content: center;
-    align-items: center;
-    right: 2px;
-    top: 50px;
-    position: absolute;
-    height: 100px;
-    width: 500px;
-    background-color: transparent;
-} */
-
-/* .square:before {
-    content: '';
-    width: 57%;
-    height: 100%;
-    left: -4%;
-    position: absolute;
-    border-color: rgb(255, 255, 255);
-    border-style: solid;
-    border-width: 3px 0px 3px 3px;
-} */
-
-/* .square:before {
-    content: '';
-    justify-content: center;
-    align-items: center;
-    left: -905px;
-    top: 180px;
-    position: absolute;
-    height: 590px;
-    width: 940px;
-    border-color: rgb(255, 255, 255);
-    border-style: solid;
-    border-width: 4px;
-} */
-
-
-
 .tip {
     font-size: 20px;
     margin: 40px auto 50px;
