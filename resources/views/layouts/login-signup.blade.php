@@ -47,16 +47,16 @@ $roles = session()->get('role');
         <div class="form sign-up">
             <h2>Be one of the communities,</h2>
             <label>
-                <dl class="dropdown-user-role">
-                    <dt><a><span>User Role</span></a></dt>
-                    <dd>
-                        <ul>
-                            <li><a class="default">User Role</a></li>
-                            <li><a>Lecturer</a></li>
-                            <li><a>Student</a></li>
-                        </ul>
-                    </dd>
-                </dl>
+                <section class="container">
+                    <div class="dropdown">
+                        <select name="one" class="dropdown-select">
+                            <option value="">Select…</option>
+                            <option value="1">Option #1</option>
+                            <option value="2">Option #2</option>
+                            <option value="3">Option #3</option>
+                        </select>
+                    </div>
+                </section>
             </label>
             <label>
                 <span>Name</span>
