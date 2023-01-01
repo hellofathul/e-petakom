@@ -68,7 +68,6 @@
     /* "transparent" doesn't work with Opera */
     border: 0;
     border-radius: 0;
-    -webkit-appearance: none;
 }
 
 .dropdown-select:focus {
