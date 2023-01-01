@@ -7,72 +7,83 @@ $roles = session()->get('role');
 ?>
 
 <!-- STYLESHEET -->
-<link rel="stylesheet" href="{{ asset('css/dropdown-signup.css') }}">
 <link rel="stylesheet" href="{{ asset('css/login-signup.css') }}">
+<link rel="stylesheet" href="{{ asset('css/animation-login.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/fontawesome.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" />
+<!--Hey! This is the original version
+of Simple CSS Waves-->
 
-<!-- Loading square for squar.red network -->
+<div class="header">
 
-<div class="cont">
-    <form action="user_login" method="post"></form>
-    <div class="form sign-in">
-        <h2>Welcome back,</h2>
-        <label>
-            <span>Email</span>
-            <input type="email" />
-        </label>
-        <label>
-            <span>Password</span>
-            <input type="password" />
-        </label>
-        <p class="forgot-pass">Forgot password?</p>
-        <button type="button" class="submit">Sign In</button>
+    <!--Content before waves-->
+    <div class="inner-header flex"></div>
+
+    <!--Waves Container-->
+    <div>
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="parallax">
+                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+            </g>
+        </svg>
     </div>
-    </form>
-    <div class="sub-cont">
-        <div class="img">
-            <div class="img__text m--up">
-                <h2>New here?</h2>
-                <p>Sign up and discover great amount of new opportunities!</p>
+    <!--Waves end-->
+
+</div>
+<!--Header ends-->
+
+<!--Content starts-->
+<div class="container" id="container">
+    <div class="form-container sign-up-container">
+        <form action="#">
+            <h1>Create Account</h1>
+            <div class="social-container">
+                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
             </div>
-            <div class="img__text m--in">
-                <h2>One of us?</h2>
-                <p>If you already has an account, just sign in. We've missed you!</p>
-            </div>
-            <div class="img__btn">
-                <span class="m--up">Sign Up</span>
-                <span class="m--in">Sign In</span>
-            </div>
-        </div>
-        <form action="user_register" method="post"></form>
-        <div class="form sign-up">
-            <h2>Be one of the communities,</h2>
-            <label>
-                <section class="container">
-                    <div class="dropdown">
-                        <select name="one" class="dropdown-select">
-                            <option value="">Select…</option>
-                            <option value="1">Option #1</option>
-                            <option value="2">Option #2</option>
-                            <option value="3">Option #3</option>
-                        </select>
-                    </div>
-                </section>
-            </label>
-            <label>
-                <span>Name</span>
-                <input type="text" />
-            </label>
-            <label>
-                <span>Email</span>
-                <input type="email" />
-            </label>
-            <label>
-                <span>Password</span>
-                <input type="password" />
-            </label>
-            <button type="button" class="submit">Sign Up</button>
-        </div>
+            <span>or use your email for registration</span>
+            <input type="text" placeholder="Name" />
+            <input type="email" placeholder="Email" />
+            <input type="password" placeholder="Password" />
+            <button>Sign Up</button>
         </form>
+    </div>
+    <div class="form-container sign-in-container">
+        <form action="#">
+            <h1>Sign in</h1>
+            <div class="social-container">
+                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <span>or use your account</span>
+            <input type="email" placeholder="Email" />
+            <input type="password" placeholder="Password" />
+            <a href="#">Forgot your password?</a>
+            <button>Sign In</button>
+        </form>
+    </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h1>Welcome Back!</h1>
+                <p>To keep connected with us please login with your personal info</p>
+                <button class="ghost" id="signIn">Sign In</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+                <h1>Hello, Friend!</h1>
+                <p>Enter your personal details and start journey with us</p>
+                <button class="ghost" id="signUp">Sign Up</button>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -81,4 +92,3 @@ $roles = session()->get('role');
     crossorigin="anonymous"></script>
 <script src="{{ asset('js/login-signup.js') }}"></script>
 <script src="{{ asset('js/app.js') }}"></script>
-<script src="{{ asset('js/dropdown-signup.js') }}"></script>
