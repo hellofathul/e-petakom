@@ -105,8 +105,8 @@ class AuthenticationController extends Controller
         $Authentication->password = $request->password;
         $Authentication->role = $request->role;
         // $Authentication->name = $request->name;
-        // $Authentication->email = $request->email;
-        // $Authentication->phone = $request->phone;
+        $Authentication->email = $request->email;
+        $Authentication->phone = $request->phone;
         // $Authentication->created_at = $currentdt;
         // $Authentication->updated_at = $currentdt;
 
@@ -125,19 +125,19 @@ class AuthenticationController extends Controller
             // return back with custom error message
             return redirect()->back()->withInput()->withErrors($custom_msg);
 
-        } elseif ($request->role == 'Dean') {
-            $dean = new Dean;
-            $dean->username = $username;
-            // DECLARE VARIABLE FROM THE INPUT REQUEST
-            $dean_first_name = $request->name;
-            $dean_email = $request->email;
-            $dean_mobile_no = $request->phone;
-            // SAVE THE VARIABLE INTO THE DATABASE
-            $dean->dean_first_name = $dean_first_name;
-            $dean->dean_email = $dean_email;
-            $dean->dean_mobile_no = $dean_mobile_no;
-            $dean->save();
-            return redirect('login');
+        // } elseif ($request->role == 'Dean') {
+        //     $dean = new Dean;
+        //     $dean->username = $username;
+        //     // DECLARE VARIABLE FROM THE INPUT REQUEST
+        //     $dean_first_name = $request->name;
+        //     $dean_email = $request->email;
+        //     $dean_mobile_no = $request->phone;
+        //     // SAVE THE VARIABLE INTO THE DATABASE
+        //     $dean->dean_first_name = $dean_first_name;
+        //     $dean->dean_email = $dean_email;
+        //     $dean->dean_mobile_no = $dean_mobile_no;
+        //     $dean->save();
+        //     return redirect('login');
 
         } elseif ($request->role == 'Student') {
             $student = new Student;
@@ -167,19 +167,19 @@ class AuthenticationController extends Controller
             $lecturer->save();
             return redirect('login');
 
-        } elseif ($request->role == 'Coordinator') {
-            $coordinator = new Coordinator;
-            $coordinator->username = $username;
-            // DECLARE VARIABLE FROM THE INPUT REQUEST
-            $coordinator_first_name = $request->name;
-            $coordinator_email = $request->email;
-            $coordinator_mobile_no = $request->phone;
-            // SAVE THE VARIABLE INTO THE DATABASE
-            $coordinator->coordinator_first_name = $coordinator_first_name;
-            $coordinator->email = $coordinator_email;
-            $coordinator->phone = $coordinator_mobile_no;
-            $coordinator->save();
-            return redirect('login');
+        // } elseif ($request->role == 'Coordinator') {
+        //     $coordinator = new Coordinator;
+        //     $coordinator->username = $username;
+        //     // DECLARE VARIABLE FROM THE INPUT REQUEST
+        //     $coordinator_first_name = $request->name;
+        //     $coordinator_email = $request->email;
+        //     $coordinator_mobile_no = $request->phone;
+        //     // SAVE THE VARIABLE INTO THE DATABASE
+        //     $coordinator->coordinator_first_name = $coordinator_first_name;
+        //     $coordinator->email = $coordinator_email;
+        //     $coordinator->phone = $coordinator_mobile_no;
+        //     $coordinator->save();
+        //     return redirect('login');
 
         } elseif ($request->role == 'Committee') {
             $committee = new Committee;

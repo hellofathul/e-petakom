@@ -62,6 +62,7 @@ of Simple CSS Waves-->
                 <select name="role" id="role" class="form-control">
                     <option value="Student">Student</option>
                     <option value="Lecturer">Lecturer</option>
+                    <option value="Lecturer">Committee</option>
                 </select>
             </div>
             <input id="username" placeholder="Username" type="username" />
@@ -72,7 +73,11 @@ of Simple CSS Waves-->
             @error('email')
                 <span style="float: right;color: red">{{ $message }}</span>
             @enderror
-            <input id="password" placeholder="password" type="password" />
+            <input id="password" placeholder="Password" type="password" />
+            @error('password')
+                <span style="float: right;color: red">{{ $message }}</span>
+            @enderror
+            <input id="phone" placeholder="Mobile No" type="phone" />
             @error('password')
                 <span style="float: right;color: red">{{ $message }}</span>
             @enderror
