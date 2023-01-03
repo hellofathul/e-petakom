@@ -57,6 +57,13 @@ of Simple CSS Waves-->
                 <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
             </div>
             <span>or use your email for registration</span>
+            <div class="dropdown-role">
+                <label for="role">Select Role:</label>
+                <select name="role" id="role" class="form-control">
+                    <option value="Student">Student</option>
+                    <option value="Lecturer">Lecturer</option>
+                </select>
+            </div>
             <input id="username" placeholder="Username" type="username" />
             @error('username')
                 <span style="float: right;color: red">{{ $message }}</span>
