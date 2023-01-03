@@ -62,7 +62,7 @@ Route::get('/login', function () {
 })->name('login');
 
 Route::get('/home', function () {
-    return view('ManageProfile.profile-student');
+    return view('layouts.main');
 });
 
 // VIEW ROUTES
