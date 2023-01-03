@@ -40,9 +40,14 @@ of Simple CSS Waves-->
 <!--Header ends-->
 
 <!--Content starts-->
+@if ($errors->any())
+    <p class="alert alert-danger">Please check your input</p>
+@endif
+
 <div class="container" id="container">
     <div class="form-container sign-up-container">
-        <form action="#">
+        <form action="{{ route('user-register') }}" method="POST">
+            @csrf
             <h1>Create Account</h1>
             <div class="social-container">
                 <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -50,14 +55,17 @@ of Simple CSS Waves-->
                 <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
             </div>
             <span>or use your email for registration</span>
-            <input type="text" placeholder="Name" />
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
+            <input id="username" placeholder="Username" type="username" />
+            @error('username')
+                <span style="float: right;color: red">{{ $message }}</span>
+            @enderror
+            <input id="email" placeholder="Email" type="email" />
+            <input id="password" placeholder="password" type="password" />
             <button>Sign Up</button>
         </form>
     </div>
     <div class="form-container sign-in-container">
-        <form action="#">
+        <form action="{{ route('user-login') }}" method="POST">
             <h1>Sign in</h1>
             <div class="social-container">
                 <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -65,8 +73,16 @@ of Simple CSS Waves-->
                 <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
             </div>
             <span>or use your account</span>
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
+            <input id="username" type="username" placeholder="Username"
+                value="{{ old('username') }}" />
+            @error('username')
+                <span style="float: right;color: red">{{ $message }}</span>
+            @enderror
+            <input id="password" type="password" placeholder="Password">
+            @error('password')
+                <span style="float: right;color: red">{{ $message }}</span>
+                <br>
+            @enderror
             <a href="#">Forgot your password?</a>
             <button>Sign In</button>
         </form>

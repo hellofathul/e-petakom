@@ -65,10 +65,10 @@ Route::view('register', 'layouts.main');
 Route::view('forgot', 'layouts.forgot-password');
 
 // AUTHENTICATION CONTROLLER
-Route::post('user_login', 'AuthenticationController@login');
-Route::post('user_register', 'AuthenticationController@register');
-Route::post('user_reset', 'AuthenticationController@resetpassword');
-Route::get('/logout', 'AuthenticationController@logout');
+Route::post('user_login', 'AuthenticationController@login')->name('user-login');
+Route::post('user_register', 'AuthenticationController@register')->name('user-register');
+Route::post('user_reset', 'AuthenticationController@resetpassword')->name('user-reset');
+Route::get('/logout', 'AuthenticationController@logout')->name('user-logout');
 
 // STUDENT CONTROLLER
 Route::get('student-profile', [StudentController::class, 'index']);
