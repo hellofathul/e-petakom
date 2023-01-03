@@ -18,8 +18,6 @@ return new class extends Migration
             $table->string('username');
             $table->string('password');
             $table->string('role');
-            $table->string('mobile_no');
-            $table->string('email');
             $table->timestamps();
         });
     }

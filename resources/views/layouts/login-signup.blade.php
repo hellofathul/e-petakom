@@ -48,7 +48,7 @@ of Simple CSS Waves-->
 
     <!--SIGN UP FORM STARTS -->
     <div class="form-container sign-up-container">
-        <form action="{{ route('user-register') }}" method="POST">
+        <form action=user_register method="POST">
             @csrf
             <h1>Create Account</h1>
             <div class="social-container">
@@ -65,19 +65,19 @@ of Simple CSS Waves-->
                     <option value="Lecturer">Committee</option>
                 </select>
             </div>
-            <input id="username" placeholder="Username" type="username" />
+            <input id="username" placeholder="Username" type="username" name="username" />
             @error('username')
                 <span style="float: right;color: red">{{ $message }}</span>
             @enderror
-            <input id="email" placeholder="Email" type="email" />
+            <input id="email" placeholder="Email" type="email" name="email"/>
             @error('email')
                 <span style="float: right;color: red">{{ $message }}</span>
             @enderror
-            <input id="password" placeholder="Password" type="password" />
+            <input id="password" placeholder="Password" type="password" name="password"/>
             @error('password')
                 <span style="float: right;color: red">{{ $message }}</span>
             @enderror
-            <input id="phone" placeholder="Mobile No" type="phone" />
+            <input id="phone" placeholder="Mobile No" type="phone" name="phone"/>
             @error('password')
                 <span style="float: right;color: red">{{ $message }}</span>
             @enderror

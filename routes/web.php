@@ -1,11 +1,12 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DeanController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\LecturerController;
 use App\Http\Controllers\CommitteeController;
 use App\Http\Controllers\CoordinatorController;
-use App\Http\Controllers\DeanController;
-use App\Http\Controllers\LecturerController;
-use App\Http\Controllers\StudentController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthenticationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,7 +67,7 @@ Route::view('forgot', 'layouts.forgot-password');
 
 // AUTHENTICATION CONTROLLER
 Route::post('user_login', 'AuthenticationController@login')->name('user-login');
-Route::post('user_register', 'AuthenticationController@register')->name('user-register');
+Route::post('user_register', [AuthenticationController::class, 'register']);
 Route::post('user_reset', 'AuthenticationController@resetpassword')->name('user-reset');
 Route::get('/logout', 'AuthenticationController@logout')->name('user-logout');
 

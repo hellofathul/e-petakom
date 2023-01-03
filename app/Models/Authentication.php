@@ -10,7 +10,7 @@ class Authentication extends Model
     use HasFactory;
 
     protected $fillable = [
-        'role', 'password', 'username', 'phone', 'email'
+        'role', 'password', 'username'
     ];
 
     protected $hidden = [
