@@ -7,116 +7,242 @@ $roles = session()->get('role');
 ?>
 
 <!-- STYLESHEET -->
-<link rel="stylesheet" href="{{ asset('css/login-signup.css') }}">
+<link rel="stylesheet" href="{{ asset('css/style.css') }}">
 <link rel="stylesheet" href="{{ asset('css/animation-login.css') }}">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/fontawesome.min.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" />
-<!--Hey! This is the original version
-of Simple CSS Waves-->
+<!-- MATERIAL ICONS CDN -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,700,1,0" />
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<!-- GOOGLE FONTS - POPPINS-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" <!--Hey! This is the
+    original version of Simple CSS Waves-->
 
-<div class="header">
-
-    <!--Content before waves-->
-    <div class="inner-header flex"></div>
-
-    <!--Waves Container-->
-    <div>
-        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-            <defs>
-                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-            </defs>
-            <g class="parallax">
-                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
-                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
-                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
-                <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
-            </g>
-        </svg>
-    </div>
-    <!--Waves end-->
-
-</div>
-<!--Header ends-->
-
-<!--Content starts-->
-@if ($errors->any())
-    <p class="alert alert-danger">Please check your input</p>
-@endif
-
-<div class="container" id="container">
-
-    <!--SIGN UP FORM STARTS -->
-    <div class="form-container sign-up-container">
-        <form action={{ route('user-register') }} method="POST">
-            @csrf
-            <h1>Create Account</h1>
-            <div class="social-container">
-                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+<!------------------- MODUL FATHUL --------------------->
+<!------------------- TOP NAVIGATION BAR --------------------->
+<div class="navigation__bar">
+    <div class="navigation__container">
+        <img src="../images/logo.png" class="logo">
+        <!-- <div class="search__bar">
+                <span class="material-symbols-rounded">
+                    search
+                </span>
+                <input type="search" placeholder="Search">
+            </div> -->
+        <div class="profile__area">
+            <div class="theme__btn">
+                <span class="material-symbols-rounded active-theme">
+                    light_mode
+                </span>
+                <span class="material-symbols-rounded">
+                    dark_mode
+                </span>
             </div>
-            <span>or use your email for registration</span>
-            <div class="dropdown-role">
-                <label for="role">Select Role:</label>
-                <select name="role" id="role" class="form-control">
-                    <option value="Student">Student</option>
-                    <option value="Lecturer">Lecturer</option>
-                    <option value="Committee">Committee</option>
-                </select>
+            <div class="profile__container">
+                <div class="profile__photo">
+                    <img src="../images/profile-1.png">
+                </div>
+                <h5 class="mt-2">CB19070</h5>
+                <span class="material-symbols-rounded">
+                    expand_more
+                </span>
             </div>
-            <input id="username" placeholder="Username" type="username" name="username" />
-            
-            <input id="email" placeholder="Email" type="email" name="email"/>
-            
-            <input id="password" placeholder="Password" type="password" name="password"/>
-            
-            <input id="phone" placeholder="Mobile No" type="phone" name="phone"/>
-            
-            <button>Sign Up</button>
-        </form>
-    </div>
-
-    <div class="form-container sign-in-container">
-        <form action="{{ route('user-login') }}" method="POST">
-            <h1>Sign in</h1>
-            <div class="social-container">
-                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-            <span>or use your account</span>
-            <input id="username" type="username" placeholder="Username" name="username" value="{{ old('username') }}" />
-            @error('username')
-                <span style="float: right;color: red">{{ $message }}</span>
-            @enderror
-            <input id="password" type="password" placeholder="Password" name="password">
-            @error('password')
-                <span style="float: right;color: red">{{ $message }}</span>
-                <br>
-            @enderror
-            <a href="#">Forgot your password?</a>
-            <button>Sign In</button>
-        </form>
-    </div>
-    <div class="overlay-container">
-        <div class="overlay">
-            <div class="overlay-panel overlay-left">
-                <h1>Welcome Back!</h1>
-                <p>To keep connected with us please login with your personal info</p>
-                <button class="ghost" id="signIn">Sign In</button>
-            </div>
-            <div class="overlay-panel overlay-right">
-                <h1>Hello, Friend!</h1>
-                <p>Enter your personal details and start journey with us</p>
-                <button class="ghost" id="signUp">Sign Up</button>
-            </div>
+            <button id="menu__btn">
+                <span class="material-symbols-rounded">
+                    menu
+                </span>
+            </button>
         </div>
     </div>
 </div>
+<!------------------- END OF NAVIGATION BAR --------------------->
 
-<!-- JAVASCRIPT -->
+<!------------------- MODUL FATHUL --------------------->
+<!------------------- MAIN PAGE LAYOUT (3 COLUMN GRID SYSTEM) --------------------->
+<main>
+    <!------------------- START OF ASIDE PAGE LAYOUT (GRID COLUMN 1) --------------------->
+    <aside>
+        <button id="close__btn">
+            <span class="material-symbols-rounded">
+                close
+            </span>
+        </button>
+
+        <!------------------- SIDEBAR --------------------->
+        <div class="sidebar__container">
+            <a href="#" class="sidebar__btn active-sidebar-btn">
+                <span class="material-symbols-rounded">manage_accounts</span>
+                <h4>Profile</h4>
+            </a>
+            <a href="#" class="sidebar__btn">
+                <span class="material-symbols-rounded">sprint</span>
+                <h4>Activities</h4>
+            </a>
+            <a href="#" class="sidebar__btn">
+                <span class="material-symbols-rounded">calendar_month</span>
+                <h4>Yearly Calendar</h4>
+            </a>
+            <a href="#" class="sidebar__btn">
+                <span class="material-symbols-rounded">list_alt</span>
+                <h4>Report</h4>
+            </a>
+            <a href="#" class="sidebar__btn">
+                <span class="material-symbols-rounded">edit_document</span>
+                <h4>Proposal</h4>
+            </a>
+            <a href="#" class="sidebar__btn">
+                <span class="material-symbols-rounded">diversity_3</span>
+                <h4>Committee<br>Election</h4>
+            </a>
+            <a href="#" class="sidebar__btn">
+                <span class="material-symbols-rounded">newspaper</span>
+                <h4>Bulletin</h4>
+            </a>
+        </div>
+        <!------------------- END OF SIDEBAR --------------------->
+    </aside>
+    <!------------------- END OF ASIDE (GRID COLUMN 1) --------------------->
+
+    <!------------------- START OF MIDDLE SECTION LAYOUT (GRID COLUMN 2) --------------------->
+    <section class="middle__container">
+        <div class="header__container">
+            <h1>Manage Profile</h1>
+        </div>
+        <div class="main__container">
+            <div class="secondary__container">
+                <div class="double__input__field">
+                    <div class="input__field">
+                        <h4>First Name</h4>
+                        <input id="tbprofession" type="first-name">
+                    </div>
+                    <div class="input__field">
+                        <h4>Last Name</h4>
+                        <input id="tbprofession" type="last-name">
+                    </div>
+                </div>
+                <div class="double__input__field">
+                    <div class="email__input__field">
+                        <h4>Email</h4>
+                        <input type="email">
+                    </div>
+                    <div class="mobile__no">
+                        <h4>Mobile No</h4>
+                        <input type="mobile-no">
+                    </div>
+                </div>
+                <div class="address__">
+                    <h4>Address</h4>
+                    <input type="email">
+                </div>
+                <div class="double__input__field">
+                    <div class="input__field">
+                        <h4>City</h4>
+                        <input type="city">
+                    </div>
+                    <div class="input__field">
+                        <h4>State</h4>
+                        <input type="state">
+                    </div>
+                </div>
+                <div class="double__input__field">
+                    <div class="email__input__field">
+                        <h4>Zip Code</h4>
+                        <input type="zipcode">
+                    </div>
+                    <div class="mobile__no">
+                        <h4>Country</h4>
+                        <input type="country">
+                    </div>
+                </div>
+                <div class="password__">
+                    <div>
+                        <h4>Password</h4>
+                    </div>
+                    <input type="password" class="input2">
+                    <span class="material-symbols-outlined show">
+                        visibility
+                    </span>
+                    <span class="material-symbols-outlined hide eye-active">
+                        visibility_off
+                    </span>
+                </div>
+                <div class="update__button__container">
+                    <button class="update__button">Update</button>
+                </div>
+            </div>
+            <div class="tertiary__container">
+                <div class="fourth__container">
+                    <div class="profile__picture">
+                        <h1>Profile Picture</h1>
+                    </div>
+                </div>
+                <div class="fourth__container">
+                    <div class="course__dropdown">
+                        <h4>Course</h1>
+                            <select class="form-select course-dropdown" aria-label="Default select example">
+                                <option selected>Software Engineering</option>
+                                <option value="1">Graphics and Multimedia Technology</option>
+                                <option value="2">Computer System's and Networking</option>
+                                <option value="3">Diploma Computer Science</option>
+                            </select>
+                    </div>
+                    <div class="triple__grid">
+                        <div class="year__dropdown">
+                            <h4>Year</h1>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>1</option>
+                                    <option value="1">2</option>
+                                    <option value="2">3</option>
+                                    <option value="3">4</option>
+                                    <option value="4">5</option>
+                                </select>
+                        </div>
+                        <div class="semester__dropdown">
+                            <h4>Semester</h1>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>1</option>
+                                    <option value="1">2</option>
+                                    <option value="2">3</option>
+                                    <option value="3">4</option>
+                                    <option value="4">5</option>
+                                    <option value="5">6</option>
+                                    <option value="6">7</option>
+                                    <option value="7">8</option>
+                                    <option value="8">9</option>
+                                </select>
+                        </div>
+                        <div class="matric__id">
+                            <div class="input__field">
+                                <h4>Matric ID</h4>
+                                <input type="matric-id" class="matric-id">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="update__button__container">
+                        <button class="update__button">Update</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<!------------------- END OF MAIN PAGE LAYOUT --------------------->
+
+
+<!------------------- JAVASCRIPT & JQUERY --------------------->
+<script src="{{ asset('js/main.js') }}"></script>
+<script src="{{ asset('js/sidebar-toggle.js') }}"></script>
+<script src="{{ asset('js/app.js') }}"></script>
+{{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+    <!-- (Optional) Latest compiled and minified JavaScript translation files -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script> --}}
 <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
     crossorigin="anonymous"></script>
-<script src="{{ asset('js/login-signup.js') }}"></script>
-<script src="{{ asset('js/app.js') }}"></script>

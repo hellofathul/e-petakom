@@ -40,7 +40,8 @@ class FacebookController extends Controller
                 return redirect()->intended('dashboard');
          
             }else{
-                $newUser = User::updateOrCreate(['email' => $user->email],[
+                $newUser = User::updateOrCreate([
+                        'email' => $user->email],[
                         'name' => $user->name,
                         'facebook_id'=> $user->id,
                         'password' => encrypt('123456dummy')

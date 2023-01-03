@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('authentications', function ($table) {
+        Schema::table('users', function ($table) {
             $table->string('facebook_id')->nullable();
         });
     }
@@ -25,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('fb_id');
+        });
     }
 };

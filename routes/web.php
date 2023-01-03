@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DeanController;
 use App\Http\Controllers\StudentController;
-use App\Http\Controllers\FacebookController;
 use App\Http\Controllers\LecturerController;
 use App\Http\Controllers\CommitteeController;
 use App\Http\Controllers\CoordinatorController;
@@ -62,9 +61,8 @@ Route::get('/login', function () {
     }
 })->name('login');
 
-Route::controller(FacebookController::class)->group(function(){
-    Route::get('auth/facebook', 'redirectToFacebook')->name('auth.facebook');
-    Route::get('auth/facebook/callback', 'handleFacebookCallback');
+Route::get('/home', function () {
+    return view('ManageProfile.profile-student');
 });
 
 // VIEW ROUTES

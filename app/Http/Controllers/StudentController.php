@@ -21,7 +21,7 @@ class StudentController extends Controller
         $username = session()->get('logged_user');
         $authentication = DB::table('authentications')
             ->Join('students', 'authentications.username', '=', 'students.username')
-            ->where('authentication.username', '=', $username)
+            ->where('authentications.username', '=', $username)
             ->get();
         return View('ManageProfile.profile-student')->with('students', $authentication);
         //var_dump($users);

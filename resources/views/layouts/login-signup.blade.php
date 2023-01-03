@@ -79,6 +79,7 @@ of Simple CSS Waves-->
 
     <div class="form-container sign-in-container">
         <form action="{{ route('user-login') }}" method="POST">
+            
             <h1>Sign in</h1>
             <div class="social-container">
                 <a href="{{ url('auth/facebook') }}" class="social"><i class="fab fa-facebook-f"></i></a>
