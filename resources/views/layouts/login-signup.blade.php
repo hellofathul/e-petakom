@@ -66,21 +66,13 @@ of Simple CSS Waves-->
                 </select>
             </div>
             <input id="username" placeholder="Username" type="username" name="username" />
-            @error('username')
-                <span style="float: right;color: red">{{ $message }}</span>
-            @enderror
+            
             <input id="email" placeholder="Email" type="email" name="email"/>
-            @error('email')
-                <span style="float: right;color: red">{{ $message }}</span>
-            @enderror
+            
             <input id="password" placeholder="Password" type="password" name="password"/>
-            @error('password')
-                <span style="float: right;color: red">{{ $message }}</span>
-            @enderror
+            
             <input id="phone" placeholder="Mobile No" type="phone" name="phone"/>
-            @error('password')
-                <span style="float: right;color: red">{{ $message }}</span>
-            @enderror
+            
             <button>Sign Up</button>
         </form>
     </div>
