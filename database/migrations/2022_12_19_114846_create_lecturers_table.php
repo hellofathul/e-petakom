@@ -16,13 +16,13 @@ return new class extends Migration
         Schema::create('lecturers', function (Blueprint $table) {
             $table->id();
             $table->string('username');
-            $table->string('lecturer_first_name');
-            $table->string('lecturer_last_name');
+            $table->string('lecturer_first_name')->nullable();
+            $table->string('lecturer_last_name')->nullable();
             $table->string('lecturer_email');
             $table->string('lecturer_mobile_no');
-            $table->string('lecturer_office_level');
-            $table->string('lecturer_office_wing');
-            $table->string('lecturer_picture');
+            $table->string('lecturer_office_level')->nullable();
+            $table->string('lecturer_office_wing')->nullable();
+            $table->string('lecturer_picture')->nullable();
             $table->timestamps();
         });
     }

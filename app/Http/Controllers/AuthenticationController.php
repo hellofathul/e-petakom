@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Student as Student;
+use App\Models\Student;
 use Illuminate\Http\Request;
 use App\Models\Lecturer as Lecturer;
-use App\Models\Committee as Committee;
+use App\Models\committee as committee;
 use Illuminate\Support\Facades\Session;
 use App\Models\Authentication as Authentication;
 
@@ -146,23 +146,17 @@ class AuthenticationController extends Controller
             $student->save();
             return redirect('login');
 
-
         } elseif ($request->role == 'Lecturer') {
             $Authentication->username = $request->username;
             $Authentication->password = $request->password;
             $Authentication->role = $request->role;
             $result = $Authentication->save();
             $role = $Authentication->role;
+            // SAVE THE VARIABLE INTO THE DATABASE
             $lecturer = new Lecturer;
             $lecturer->username = $username;
-            // DECLARE VARIABLE FROM THE INPUT REQUEST
-            $lecturer_first_name = $request->name;
-            $lecturer_email = $request->email;
-            $lecturer_mobile_no = $request->phone;
-            // SAVE THE VARIABLE INTO THE DATABASE
-            $lecturer->lecturer_first_name = $lecturer_first_name;
-            $lecturer->email = $lecturer_email;
-            $lecturer->phone = $lecturer_mobile_no;
+            $lecturer->lecturer_email = $request->email;
+            $lecturer->lecturer_mobile_no = $request->phone;
             $lecturer->save();
             return redirect('login');
 
@@ -186,15 +180,11 @@ class AuthenticationController extends Controller
             $Authentication->role = $request->role;
             $result = $Authentication->save();
             $role = $Authentication->role;
-            $committee = new Committee;
-            // DECLARE VARIABLE FROM THE INPUT REQUEST
-            $committee_first_name = $request->name;
-            $committee_email = $request->email;
-            $committee_mobile_no = $request->phone;
             // SAVE THE VARIABLE INTO THE DATABASE
-            $committee->committee_first_name = $committee_first_name;
-            $committee->email = $committee_email;
-            $committee->phone = $committee_mobile_no;
+            $committee = new Committee;
+            $committee->username = $username;
+            $committee->committee_email = $request->email;
+            $committee->committee_mobile_no = $request->phone;
             $committee->save();
             return redirect('login');
         }

@@ -48,7 +48,7 @@ of Simple CSS Waves-->
 
     <!--SIGN UP FORM STARTS -->
     <div class="form-container sign-up-container">
-        <form action=user_register method="POST">
+        <form action={{ route('user-register') }} method="POST">
             @csrf
             <h1>Create Account</h1>
             <div class="social-container">
@@ -62,7 +62,7 @@ of Simple CSS Waves-->
                 <select name="role" id="role" class="form-control">
                     <option value="Student">Student</option>
                     <option value="Lecturer">Lecturer</option>
-                    <option value="Lecturer">Committee</option>
+                    <option value="Committee">Committee</option>
                 </select>
             </div>
             <input id="username" placeholder="Username" type="username" name="username" />
@@ -94,11 +94,11 @@ of Simple CSS Waves-->
                 <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
             </div>
             <span>or use your account</span>
-            <input id="username" type="username" placeholder="Username" value="{{ old('username') }}" />
+            <input id="username" type="username" placeholder="Username" name="username" value="{{ old('username') }}" />
             @error('username')
                 <span style="float: right;color: red">{{ $message }}</span>
             @enderror
-            <input id="password" type="password" placeholder="Password">
+            <input id="password" type="password" placeholder="Password" name="password">
             @error('password')
                 <span style="float: right;color: red">{{ $message }}</span>
                 <br>

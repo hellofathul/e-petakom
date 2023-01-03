@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('committees', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('username')->nullable();
-            $table->string('committee_first_name');
+            $table->foreignId('username');
+            $table->string('committee_first_name')->nullable();
             $table->string('committee_last_name')->nullable();
             $table->string('committee_email');
             $table->string('committee_mobile_no');
