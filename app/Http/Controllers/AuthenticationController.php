@@ -20,6 +20,7 @@ class AuthenticationController extends Controller
         $messages = [
             'username.required' => 'Username is required',
             'password.required' => 'Password is required',
+            
         ];
 
         $rules = [
@@ -48,7 +49,7 @@ class AuthenticationController extends Controller
                 Session::put('role', $role);
                 Session::put('logged_user', $username); //put the data and in session
 
-                return redirect('/');
+                return redirect('home');
 
             } else {
                 // custom back validator message
@@ -77,9 +78,9 @@ class AuthenticationController extends Controller
         // Validator
 
         $messages = [
-            'username.required' => 'Username is required',
-            'password.required' => 'Password is required',
-            'role.required' => 'Role is required',
+            'username' => 'Username is required',
+            'password' => 'Password is required',
+            'role' => 'Role is required',
         ];
 
         $rules = [
@@ -87,7 +88,7 @@ class AuthenticationController extends Controller
             'password' => 'required',
             'role' => 'required',
             'name' => 'required',
-            'email' => 'required',
+            'email' => 'required','email:rfc,dns,spoof',
             'phone' => 'required | email',
         ];
 

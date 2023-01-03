@@ -60,7 +60,13 @@ of Simple CSS Waves-->
                 <span style="float: right;color: red">{{ $message }}</span>
             @enderror
             <input id="email" placeholder="Email" type="email" />
+            @error('email')
+                <span style="float: right;color: red">{{ $message }}</span>
+            @enderror
             <input id="password" placeholder="password" type="password" />
+            @error('password')
+                <span style="float: right;color: red">{{ $message }}</span>
+            @enderror
             <button>Sign Up</button>
         </form>
     </div>

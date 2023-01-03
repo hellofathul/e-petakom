@@ -37,7 +37,7 @@ Route::get('/', function () {
             return redirect('coordinator-profile');
         }
     }
-});
+})->name('home');
 
 Route::get('/login', function () {
     $logged_user = session()->get('logged_user');
@@ -58,7 +58,7 @@ Route::get('/login', function () {
             return redirect('coordinator-profile');
         }
     }
-});
+})->name('login');
 
 // VIEW ROUTES
 Route::view('register', 'layouts.main');
