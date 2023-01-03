@@ -72,31 +72,31 @@ $roles = session()->get('role');
 
         <!------------------- SIDEBAR --------------------->
         <div class="sidebar__container">
-            <a href="#" class="sidebar__btn active-sidebar-btn">
+            <a href="{{ route('profile') }}" class="sidebar__btn active-sidebar-btn">
                 <span class="material-symbols-rounded">manage_accounts</span>
                 <h4>Profile</h4>
             </a>
-            <a href="#" class="sidebar__btn">
+            <a href="{{ route('activities') }}" class="sidebar__btn">
                 <span class="material-symbols-rounded">sprint</span>
                 <h4>Activities</h4>
             </a>
-            <a href="#" class="sidebar__btn">
+            <a href="{{ route('calendar') }}" class="sidebar__btn">
                 <span class="material-symbols-rounded">calendar_month</span>
                 <h4>Yearly Calendar</h4>
             </a>
-            <a href="#" class="sidebar__btn">
+            <a href="{{ route('report') }}" class="sidebar__btn">
                 <span class="material-symbols-rounded">list_alt</span>
                 <h4>Report</h4>
             </a>
-            <a href="#" class="sidebar__btn">
+            <a href="{{ route('proposal') }}" class="sidebar__btn">
                 <span class="material-symbols-rounded">edit_document</span>
                 <h4>Proposal</h4>
             </a>
-            <a href="#" class="sidebar__btn">
+            <a href="{{ route('election') }}" class="sidebar__btn">
                 <span class="material-symbols-rounded">diversity_3</span>
                 <h4>Committee<br>Election</h4>
             </a>
-            <a href="#" class="sidebar__btn">
+            <a href="{{ route('bulletin') }}" class="sidebar__btn">
                 <span class="material-symbols-rounded">newspaper</span>
                 <h4>Bulletin</h4>
             </a>
