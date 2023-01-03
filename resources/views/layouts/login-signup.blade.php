@@ -52,7 +52,7 @@ of Simple CSS Waves-->
             @csrf
             <h1>Create Account</h1>
             <div class="social-container">
-                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                <a href="{{ url('auth/facebook') }}" class="social"><i class="fab fa-facebook-f"></i></a>
                 <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
                 <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
             </div>
@@ -81,7 +81,7 @@ of Simple CSS Waves-->
         <form action="{{ route('user-login') }}" method="POST">
             <h1>Sign in</h1>
             <div class="social-container">
-                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                <a href="{{ url('auth/facebook') }}" class="social"><i class="fab fa-facebook-f"></i></a>
                 <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
                 <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
             </div>
