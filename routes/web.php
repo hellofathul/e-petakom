@@ -97,7 +97,7 @@ Route::view('forgot', 'layouts.forgot-password');
 Route::post('user_login', [AuthenticationController::class, 'login'])->name('user-login');
 Route::post('user_register', [AuthenticationController::class, 'register'])->name('user-register');
 Route::post('user_reset', 'AuthenticationController@resetpassword')->name('user-reset');
-Route::get('/logout', 'AuthenticationController@logout')->name('user-logout');
+Route::get('/logout', [AuthenticationController::class, 'logout'])->name('user-logout');
 
 // STUDENT CONTROLLER
 Route::get('student-profile', [StudentController::class, 'index']);
