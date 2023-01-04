@@ -42,6 +42,7 @@ class StudentController extends Controller
         $student_mobile_no = $request->input('student_mobile_no');
         $student_address = $request->input('student_address');
         $student_city = $request->input('student_city');
+        $student_country = $request->input('student_country');
         $student_state = $request->input('student_state');
         $student_zipcode = $request->input('student_zipcode');
         $student_course = $request->input('student_course');
@@ -64,6 +65,7 @@ class StudentController extends Controller
         $students->student_mobile_no = $student_mobile_no;
         $students->student_address = $student_address;
         $students->student_city = $student_city;
+        $students->student_country = $student_country;
         $students->student_state = $student_state;
         $students->student_zipcode = $student_zipcode;
         $students->student_course = $student_course;
