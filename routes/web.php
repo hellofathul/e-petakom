@@ -82,8 +82,6 @@ Route::get('/home', function () {
     }
 });
 
-
-Route::view('profile', 'ManageProfile.profile-student')->name('profile');
 Route::view('activities', 'ManageProfile.profile-student')->name('activities');
 Route::view('calendar', 'ManageProfile.profile-student')->name('calendar');
 Route::view('report', 'ManageProfile.profile-student')->name('report');
