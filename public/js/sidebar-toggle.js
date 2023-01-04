@@ -1,6 +1,6 @@
 //toggle sidebar active
 $(function () {
-    $('a[href*="#"]').on('click', function () {
+    $('a[href*="{{route('*')}}"]').on('click', function () {
         // e.preventDefault()
         // oldObjChild = $('.sidebar > a'); //gets active nav-item child nav-link
         oldObj = $('.active-sidebar-btn'); //gets the active nav-item
