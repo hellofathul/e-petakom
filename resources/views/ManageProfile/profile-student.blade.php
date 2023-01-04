@@ -17,45 +17,47 @@ $roles = session()->get('role');
                 <div class="double__input__field">
                     <div class="input__field">
                         <h4>First Name</h4>
-                        <input id="tbprofession" type="first-name" value="{{ $students[0]->student_first_name }}">
+                        <input id="tbprofession" type="first-name" value="{{ $students[0]->student_first_name }}"
+                            name="student_first_name">
                     </div>
                     <div class="input__field">
                         <h4>Last Name</h4>
-                        <input id="tbprofession" type="last-name" value="{{ $students[0]->student_last_name }}">
+                        <input id="tbprofession" type="last-name" value="{{ $students[0]->student_last_name }}"
+                            name="student_last_name">
                     </div>
                 </div>
                 <div class="double__input__field">
                     <div class="email__input__field">
                         <h4>Email</h4>
-                        <input type="email" value="{{ $students[0]->student_email }}">
+                        <input type="email" value="{{ $students[0]->student_email }}" name="student_email">
                     </div>
                     <div class="mobile__no">
                         <h4>Mobile No</h4>
-                        <input type="mobile-no" value="{{ $students[0]->student_mobile_no }}">
+                        <input type="mobile-no" value="{{ $students[0]->student_mobile_no }}" name="student_mobile_no">
                     </div>
                 </div>
                 <div class="address__">
                     <h4>Address</h4>
-                    <input type="address" value="{{ $students[0]->student_address }}">
+                    <input type="address" value="{{ $students[0]->student_address }}" name="student_address">
                 </div>
                 <div class="double__input__field">
                     <div class="input__field">
                         <h4>City</h4>
-                        <input type="city" value="{{ $students[0]->student_city }}">
+                        <input type="city" value="{{ $students[0]->student_city }}" name="student_city">
                     </div>
                     <div class="input__field">
                         <h4>State</h4>
-                        <input type="state" value="{{ $students[0]->student_state }}">
+                        <input type="state" value="{{ $students[0]->student_state }}" name="student_state">
                     </div>
                 </div>
                 <div class="double__input__field">
                     <div class="email__input__field">
                         <h4>Zip Code</h4>
-                        <input type="zipcode" value="{{ $students[0]->student_zipcode }}" name="zipcode">
+                        <input type="zipcode" value="{{ $students[0]->student_zipcode }}" name="student_zipcode">
                     </div>
                     <div class="mobile__no">
                         <h4>Country</h4>
-                        <input type="country" value="{{ $students[0]->student_country }}" name="country">
+                        <input type="country" value="{{ $students[0]->student_country }}" name="student_country">
                     </div>
                 </div>
                 <div class="password__">
@@ -83,7 +85,8 @@ $roles = session()->get('role');
                 <div class="fourth__container">
                     <div class="course__dropdown">
                         <h4>Course</h1>
-                            <select class="form-select course-dropdown" aria-label="Default select example">
+                            <select class="form-select course-dropdown" aria-label="Default select example"
+                                name="student_course">
                                 <option selected>Software Engineering</option>
                                 <option value="1">Graphics and Multimedia Technology</option>
                                 <option value="2">Computer System's and Networking</option>
@@ -93,7 +96,7 @@ $roles = session()->get('role');
                     <div class="triple__grid">
                         <div class="year__dropdown">
                             <h4>Year</h1>
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select" aria-label="Default select example" name="student_year">
                                     <option selected>1</option>
                                     <option value="1">2</option>
                                     <option value="2">3</option>
@@ -103,7 +106,7 @@ $roles = session()->get('role');
                         </div>
                         <div class="semester__dropdown">
                             <h4>Semester</h1>
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select" aria-label="Default select example" name="student_semester">
                                     <option selected>1</option>
                                     <option value="1">2</option>
                                     <option value="2">3</option>
@@ -118,7 +121,8 @@ $roles = session()->get('role');
                         <div class="matric__id">
                             <div class="input__field">
                                 <h4>Matric ID</h4>
-                                <input type="matric-id" class="matric-id" value="{{ $students[0]->username }}" name="username">
+                                <input type="matric-id" class="matric-id" value="{{ $students[0]->username }}"
+                                    name="username">
                             </div>
                         </div>
                     </div>

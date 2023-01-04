@@ -73,7 +73,7 @@ class StudentController extends Controller
         $students->student_semester = $student_semester;
         $students->student_picture = $student_picture;
         $students->save();
-        return redirect("profile-student");
+        return redirect("student-profile");
     }
 
     /**
