@@ -24,7 +24,7 @@ class Authentication extends Model
 
     public function student()
     {
-        return $this->hasOne(Students::class,'username', 'username');
+        return $this->hasOne(Student::class,'username', 'username');
     }
 
     public function lecturer()

@@ -11,5 +11,10 @@ class Dean extends Model
     protected $fillable = [
         'username','dean_first_name','dean_last_name','dean_email','dean_mobile_no','dean_office_level','dean_office_wing','dean_picture'
     ];
+
+    public function detail()
+    {
+        return $this->belongsTo(Authentication::class, 'username', 'username');
+    }
 }
 

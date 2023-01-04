@@ -15,52 +15,52 @@ $roles = session()->get('role');
             <div class="double__input__field">
                 <div class="input__field">
                     <h4>First Name</h4>
-                    <input id="tbprofession" type="first-name">
+                    <input id="tbprofession" type="first-name" value="{{$students[0]->student_first_name}}">
                 </div>
                 <div class="input__field">
                     <h4>Last Name</h4>
-                    <input id="tbprofession" type="last-name">
+                    <input id="tbprofession" type="last-name" value="{{$students[0]->student_last_name}}">
                 </div>
             </div>
             <div class="double__input__field">
                 <div class="email__input__field">
                     <h4>Email</h4>
-                    <input type="email">
+                    <input type="email" value="{{$students[0]->student_email}}">
                 </div>
                 <div class="mobile__no">
                     <h4>Mobile No</h4>
-                    <input type="mobile-no">
+                    <input type="mobile-no" value="{{$students[0]->student_mobile_no}}">
                 </div>
             </div>
             <div class="address__">
                 <h4>Address</h4>
-                <input type="email">
+                <input type="address" value="{{$students[0]->student_address}}">
             </div>
             <div class="double__input__field">
                 <div class="input__field">
                     <h4>City</h4>
-                    <input type="city">
+                    <input type="city" value="{{$students[0]->student_city}}">
                 </div>
                 <div class="input__field">
                     <h4>State</h4>
-                    <input type="state">
+                    <input type="state" value="{{$students[0]->student_state}}">
                 </div>
             </div>
             <div class="double__input__field">
                 <div class="email__input__field">
                     <h4>Zip Code</h4>
-                    <input type="zipcode">
+                    <input type="zipcode" value="{{$students[0]->student_zipcode}}">
                 </div>
                 <div class="mobile__no">
                     <h4>Country</h4>
-                    <input type="country">
+                    <input type="country" value="{{$students[0]->student_country}}">
                 </div>
             </div>
             <div class="password__">
                 <div>
                     <h4>Password</h4>
                 </div>
-                <input type="password" class="input2">
+                <input type="password" class="input2" value="{{$students[0]->password}}" >
                 <span class="material-symbols-outlined show">
                     visibility
                 </span>

@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('student_address')->nullable();
             $table->string('student_city')->nullable();
             $table->string('student_state')->nullable();
+            $table->string('student_country')->nullable();
             $table->string('student_zipcode')->nullable();
             $table->string('student_course')->nullable();
             $table->string('student_year')->nullable();
