@@ -72,7 +72,7 @@ $roles = session()->get('role');
 
         <!------------------- SIDEBAR --------------------->
         <div class="sidebar__container">
-            <a href="{{ route('profile') }}" class="sidebar__btn active-sidebar-btn">
+            <a href="{{ route('home') }}" class="sidebar__btn active-sidebar-btn">
                 <span class="material-symbols-rounded">manage_accounts</span>
                 <h4>Profile</h4>
             </a>
@@ -110,7 +110,7 @@ $roles = session()->get('role');
         <div class="header__container">
             <h1>Manage Profile</h1>
         </div>
-        @yield('role')
+        @yield('content')
     </section>
 </main>
 <!------------------- END OF MAIN PAGE LAYOUT --------------------->

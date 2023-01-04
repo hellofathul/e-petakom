@@ -62,8 +62,34 @@ Route::get('/login', function () {
 })->name('login');
 
 Route::get('/home', function () {
-    return view('layouts.main');
+    $logged_user = session()->get('logged_user');
+    $role = session()->get('role');
+
+    if (!$logged_user) {
+        return view('layouts.login-signup');
+    } else {
+        if ($role == 'Dean') {
+            return redirect('dean-profile');
+        } elseif ($role == 'Student') {
+            return redirect('student-profile');
+        } elseif ($role == 'Lecturer') {
+            return redirect('lecturer-profile');
+        } elseif ($role == 'Committee') {
+            return redirect('committee-profile');
+        } elseif ($role == 'Coordinator') {
+            return redirect('coordinator-profile');
+        }
+    }
 });
+
+
+Route::view('profile', 'ManageProfile.profile-student')->name('profile');
+Route::view('activities', 'ManageProfile.profile-student')->name('activities');
+Route::view('calendar', 'ManageProfile.profile-student')->name('calendar');
+Route::view('report', 'ManageProfile.profile-student')->name('report');
+Route::view('proposal', 'ManageProfile.profile-student')->name('proposal');
+Route::view('election', 'ManageProfile.profile-student')->name('election');
+Route::view('bulletin', 'ManageProfile.profile-student')->name('bulletin');
 
 // VIEW ROUTES
 Route::view('register', 'layouts.main');
