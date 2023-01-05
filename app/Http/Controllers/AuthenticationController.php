@@ -13,20 +13,19 @@ class AuthenticationController extends Controller
 {
     public function login(Request $request)
     {
-        // Validator
+        //Validator
 
-        // $messages = [
-        //     'username.required' => 'Username is required',
-        //     'password.required' => 'Password is required',
+        $messages = [
+            'username' => 'Username is required',
+            'password' => 'Password is required',
+        ];
 
-        // ];
+        $rules = [
+            'username' => 'required',
+            'password' => 'required',
+        ];
 
-        // $rules = [
-        //     'username' => 'required',
-        //     'password' => 'required',
-        // ];
-
-        // $validated_data = $request->validate($rules, $messages);
+        $validated_data = $request->validate($rules, $messages);
 
         $data = $request->input();
 
