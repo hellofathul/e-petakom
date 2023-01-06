@@ -140,6 +140,10 @@ Route::get('/ces', function () {
     return view('electioncommittee/ce-student');
 });
 
+Route::get('/cer', function () {
+    return view('electioncommittee/ce-student-register');
+});
+
 Route::get('/ceo', function () {
     return view('electioncommittee/ce-coordinator');
 });

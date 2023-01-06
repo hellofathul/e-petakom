@@ -19,6 +19,7 @@ $roles = session()->get('role');
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" <!--Hey! This is the
     original version of Simple CSS Waves-->
 <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+<link rel="stylesheet" href="{{ asset('css/style-election.css') }}">
 <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
     crossorigin="anonymous"></script>
 
@@ -110,9 +111,6 @@ $roles = session()->get('role');
 
     <!------------------- START OF MIDDLE SECTION LAYOUT (GRID COLUMN 2) --------------------->
     <section class="middle__container">
-        <div class="header__container">
-            <h1>Manage Profile</h1>
-        </div>
         @yield('content')
     </section>
 </main>

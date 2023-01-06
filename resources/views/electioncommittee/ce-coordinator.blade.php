@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>e-PETAKOM</title>
-    <!-- MATERIAL ICONS CDN -->
+     <!-- BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- MATERIAL ICONS CDN -->
@@ -117,10 +117,14 @@
             </div>
             <div class="election__container">
                 <button class="electionmain">
-                    <h2>Register As Candidate</h2>
+                    <h2>Manage Candidate Registration</h2>
                 </button>
                 <button class="electionmain">
-                    <h2>Vote Candidate</h2>
+                    <h2>Manage Election</h2>
+                </button>
+
+                <button class="electionmain">
+                    <h2>Voting Count</h2>
                 </button>
             </div>
         </section>
@@ -131,7 +135,18 @@
         <!-- END OF RIGHT -->
     </main>
     <!------------- END OF ASIDE------------->
+    <!------------------- JAVASCRIPT & JQUERY --------------------->
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="main.js"></script>
+    <script src="sidebar_toggle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
 
+    <!-- (Optional) Latest compiled and minified JavaScript translation files -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script>
 </body>
 
 </html>
