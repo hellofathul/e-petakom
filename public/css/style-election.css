@@ -1,0 +1,117 @@
+/* dhiya CSS Committee Election*/
+button.electionmain {
+    margin-top: 3rem;
+    padding: 3rem;
+    border-radius: var(--card-border-radius);
+    background-color: var(--color-gray-light);
+    color: var(--color-white);
+    transition-duration: 0.4s;
+}
+
+button.electionmain:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+button.electionuploadregister {
+    margin-top: 3rem;
+    padding: 0.5rem;
+    width: 7%;
+    border-radius: var(--card-border-radius);
+    background-color: var(--color-white);
+    color: var(--color-white);
+    transition-duration: 0.4s;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button.electionuploadregister:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+button.electionnormal {
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    padding: 1rem;
+    border-radius: var(--card-border-radius);
+    background-color: var(--color-gray-light);
+    color: var(--color-white);
+    transition-duration: 0.4s;
+}
+
+button.electionnormal:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+main.election {
+    display: grid;
+    grid-template-columns: 16rem auto;
+    gap: 2rem;
+    width: 96%;
+    margin: 3rem auto;
+}
+
+main section.middle .election__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+}
+
+main section.middle .electionregister__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    /*gap: 3rem;*/
+}
+
+img.file {
+    width: 100%;
+    height: auto;
+}
+
+main section.middle .electionforms__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    /*gap: 3rem;*/
+}
+
+main section.middle .electionforms__container>div {
+    background: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    margin-top: 3rem;
+}
+
+.electionforminputname {
+    display: flex;
+    gap: 1rem;
+}
+
+.electionform_inputname_manifesto {
+    display: flex;
+    gap: 5rem;
+}
+
+textarea.terms {
+    width: 100%;
+    height: 100%;
+}
+
+input.electiontextform_matricid {
+    width: 40%;
+    border: 1px solid var(--color-gray-dark);
+    border-radius: var(--border-radius-1);
+}
+
+input.electiontextform_name {
+    width: 40.5rem;
+    border: 1px solid var(--color-gray-dark);
+    border-radius: var(--border-radius-1);
+}
+
+input.electiontextform_manifesto {
+    border: 1px solid var(--color-gray-dark);
+    border-radius: var(--border-radius-1);
+}
