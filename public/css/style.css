@@ -616,6 +616,11 @@ main section.middle__container .main__container>.tertiary__container>.fourth__co
     transition: var(--transition);
 }
 
+.input-group {
+    position: relative;
+    top: 20rem;
+}
+
 /* ======= MEDIA QUERIES FOR TABLETS (REPONSIVE DESIGN) ======== */
 
 @media screen and (max-width:1024px) {

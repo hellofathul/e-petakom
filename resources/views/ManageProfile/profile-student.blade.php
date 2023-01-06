@@ -11,6 +11,9 @@ $roles = session()->get('role');
 
 @section('content')
     <form action="student_update" method="POST">
+        <div class="header">
+            <h1>Manage Profile</h1>
+        </div>
         <div class="main__container">
             <div class="secondary__container">
                 @csrf
@@ -79,7 +82,17 @@ $roles = session()->get('role');
             <div class="tertiary__container">
                 <div class="fourth__container">
                     <div class="profile__picture">
-                        <h1>Profile Picture</h1>    
+                        <h1>Profile Picture</h1>
+                        <div class="input-group mb-3 mt-12">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                            </div>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="inputGroupFile01"
+                                    aria-describedby="inputGroupFileAddon01">
+                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="fourth__container">
@@ -88,7 +101,8 @@ $roles = session()->get('role');
                             <select class="form-select course-dropdown" name="student_course">
                                 <option selected>{{ $students[0]->student_course }}</option>
                                 <option value="Software Engineering">Software Engineering</option>
-                                <option value="Graphics and Multimedia Technology">Graphics and Multimedia Technology</option>
+                                <option value="Graphics and Multimedia Technology">Graphics and Multimedia Technology
+                                </option>
                                 <option value="Computer System's and Networking">Computer System's and Networking</option>
                                 <option value="Diploma Computer Science">Diploma Computer Science</option>
                             </select>

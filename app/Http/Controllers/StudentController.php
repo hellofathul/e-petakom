@@ -25,6 +25,7 @@ class StudentController extends Controller
             ->get();
         return View('ManageProfile.profile-student')->with('students', $authentication);
         //var_dump($users);
+        //dd($request->all());
     }
 
     /**

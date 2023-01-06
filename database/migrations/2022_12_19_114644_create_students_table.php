@@ -29,6 +29,7 @@ return new class extends Migration
             $table->string('student_year')->nullable();
             $table->string('student_semester')->nullable();
             $table->string('student_picture')->nullable();
+            $table->string('student_picture_size')->nullable();
             $table->timestamps();
         });
     }

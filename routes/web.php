@@ -100,8 +100,9 @@ Route::post('user_reset', 'AuthenticationController@resetpassword')->name('user-
 Route::get('/logout', [AuthenticationController::class, 'logout'])->name('user-logout');
 
 // STUDENT CONTROLLER
-Route::get('student-profile', [StudentController::class, 'index']);
+Route::get('/student-profile', [StudentController::class, 'index']);
 Route::post('student_update', [StudentController::class, 'update']);
+Route::post('studen_upload', [StudentController::class, 'store']);
 
 // LECTURER CONTROLLER
 Route::get('lecturer-profile', [LecturerController::class, 'index']);
