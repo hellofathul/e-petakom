@@ -389,7 +389,7 @@ main section.middle__container {
     padding: var(--card-padding);
     border-radius: 1rem;
     margin-top: 3rem;
-    height: 91%;
+    height: 77%;
 }
 
 .tertiary__container {
@@ -452,7 +452,7 @@ main section.middle__container {
 .main__container input {
     height: 1rem;
     background: transparent;
-    margin: 15px 0;
+    margin: 8px 0 3px;
     border: 2px solid var(--color-gray-very-light);
     border-radius: 0.5rem;
     display: flex;
