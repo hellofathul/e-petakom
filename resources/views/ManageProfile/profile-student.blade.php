@@ -83,7 +83,7 @@ $roles = session()->get('role');
                 <div class="fourth__container">
                     <div class="profile__picture">
                         <h1>Profile Picture</h1>
-                        <div class="input-group mb-3 mt-12">
+                        <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
                             </div>

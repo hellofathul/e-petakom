@@ -7,7 +7,7 @@
     --color-gray-dark: #56555e;
     --color-gray-very-light: #D9D9D9;
     --color-dark: rgba(85,85,85,.8);
-    --color-primary: #3c37ff;
+    --color-primary: #d11520;
     --color-primary-dropdown: #323645;
     --color-success: rgb(34, 202, 75);
     --color-danger: rgb(255, 67, 54);
@@ -57,6 +57,7 @@
     --color-white: #131316;
     --color-light: #23232a;
     --color-black: rgb(255, 255, 255);
+    --color-dark: #c3c3c3;
     --color-gray-dark: #adacb5;
     --color-gray-very-light: #2d2c2c;
     --color-white-button: #f0eff5;
@@ -388,6 +389,7 @@ main section.middle__container {
     padding: var(--card-padding);
     border-radius: 1rem;
     margin-top: 3rem;
+    height: 91%;
 }
 
 .tertiary__container {
@@ -612,7 +614,7 @@ select.form-select {
 
 .input-group {
     position: relative;
-    top: 20rem;
+    top: 23rem;
 }
 
 /* ======= MEDIA QUERIES FOR TABLETS (REPONSIVE DESIGN) ======== */
