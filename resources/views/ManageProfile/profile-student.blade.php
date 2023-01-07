@@ -11,7 +11,7 @@ $roles = session()->get('role');
 
 @section('content')
     <form action="student_update" method="POST">
-        <div class="header">
+        <div class="header__container">
             <h1>Manage Profile</h1>
         </div>
         <div class="main__container">
@@ -142,8 +142,8 @@ $roles = session()->get('role');
                                 </select>
                         </div>
                         <div class="matric__id">
+                            <h4>Matric ID</h4>
                             <div class="input__field">
-                                <h4>Matric ID</h4>
                                 <input type="matric-id" class="matric-id" value="{{ $students[0]->username }}"
                                     name="username">
                             </div>

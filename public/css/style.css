@@ -366,88 +366,87 @@ main section.middle__container {
     margin-left: 3rem;
 }
 
-main section.middle__container .header__container {
+.header__container {
     display: flex;
     align-items: center;
     gap: 1rem;
 }
 
-main section.middle__container .header__container h1 {
+.header__container h1 {
     font-weight: 650;
 }
 
-main section.middle__container .main__container {
+.main__container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 3rem;
 }
 
-main section.middle__container .main__container>.secondary__container {
+.secondary__container {
     background: var(--color-white);
     padding: var(--card-padding);
     border-radius: var(--card-border-radius-2);
     margin-top: 3rem;
 }
 
-main section.middle__container .main__container>.tertiary__container {
+.tertiary__container {
     display: grid;
     grid-template-rows: 1fr 1fr;
     gap: 3rem;
     margin-top: 3rem;
 }
 
-main section.middle__container .main__container>.tertiary__container>div {
+.tertiary__container>div {
     background: var(--color-white);
     padding: var(--card-padding);
     border-radius: var(--card-border-radius-2);
 }
 
-main section.middle__container .main__container>.secondary__container>.double__input__field {
+.secondary__container>.double__input__field {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
     margin: 1rem;
 }
 
-main section.middle__container .main__container>.secondary__container>.address__ {
+.address__ {
     display: grid;
     grid-template-columns: 1fr;
     margin: 1rem;
 }
 
-
-main section.middle__container .main__container>.secondary__container>.password__ {
+.password__ {
     display: grid;
     grid-template-columns: 1fr;
     margin: 1rem;
 }
 
-main section.middle__container .main__container>.tertiary__container>.fourth__container>.triple__grid {
+.triple__grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 2rem;
     margin: 1rem;
 }
 
-main section.middle__container .main__container>.tertiary__container>.fourth__container>.course__dropdown {
+.course__dropdown {
     display: grid;
     grid-template-columns: 1fr;
     margin: 1rem;
 }
 
-main section.middle__container .main__container>.tertiary__container>.fourth__container>.matric__id {
+.fourth__container>.matric__id {
     display: grid;
     grid-template-columns: 1fr;
     margin: 1rem;
 }
 
-main section.middle__container .main__container h4 {
+.main__container h4 {
     font-size: 1.2rem;
     font-weight: 500;
     color: var(--color-dark);
 }
 
-main section.middle__container .main__container input {
+.main__container input {
     height: 1rem;
     background: transparent;
     margin: 15px 0;
@@ -463,7 +462,7 @@ main section.middle__container .main__container input {
     padding: var(--card-padding);
 }
 
-main section.middle__container .main__container>.tertiary__container>.fourth__container>.triple__grid>.matric__id>.input__field>.matric-id {
+.input__field>.matric-id {
     height: 3.6rem;
     background: transparent;
     margin: 15px 0;
@@ -479,21 +478,21 @@ main section.middle__container .main__container>.tertiary__container>.fourth__co
     width: 120px;
 }
 
-main section.middle__container .main__container>.secondary__container>.update__button__container {
+.secondary__container>.update__button__container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 3rem;
     margin: 1rem;
 }
 
-main section.middle__container .main__container>.tertiary__container>.fourth__container>.update__button__container {
+.fourth__container>.update__button__container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 3rem;
     margin: 1rem;
 }
 
-main section.middle__container .main__container>.tertiary__container>.fourth__container>.update__button__container>button {
+.fourth__container>.update__button__container>button {
     width: 150px;
     height: 4rem;
     border: none;
@@ -506,12 +505,12 @@ main section.middle__container .main__container>.tertiary__container>.fourth__co
     cursor: pointer;
 }
 
-main section.middle__container .main__container>.tertiary__container>.fourth__container>.update__button__container>button:hover {
+.fourth__container>.update__button__container>button:hover {
     background: #2d28bb;
     transition: var(--transition);
 }
 
-main section.middle__container .main__container>.secondary__container>div>button {
+.secondary__container>div>button {
     width: 150px;
     height: 4rem;
     border: none;
@@ -569,12 +568,7 @@ select.form-select {
     appearance: menulist !important;
 }
 
-main section.middle__container .main__container>.secondary__container>div>button:hover {
-    background: #2d28bb;
-    transition: var(--transition);
-}
-
-main section.middle__container .main__container input.active-input {
+.main__container input.active-input {
     height: 1rem;
     background: transparent;
     margin: 15px 0;
@@ -590,12 +584,12 @@ main section.middle__container .main__container input.active-input {
     padding: var(--card-padding);
 }
 
-main section.middle__container .main__container input:hover {
+.main__container input:hover {  
     border: 2px solid var(--color-warning);
     transition: var(--transition);
 }
 
-main section.middle__container .main__container>.tertiary__container>.fourth__container>.triple__grid>.matric__id>.input__field>.matric-id.active-input {
+.matric__id>.input__field>.matric-id.active-input {
     height: 1rem;
     background: transparent;
     margin: 15px 0;
@@ -611,7 +605,7 @@ main section.middle__container .main__container>.tertiary__container>.fourth__co
     padding: var(--card-padding);
 }
 
-main section.middle__container .main__container>.tertiary__container>.fourth__container>.triple__grid>.matric__id>.input__field>.matric-id:hover {
+.matric__id>.input__field>.matric-id:hover {
     border: 2px solid var(--color-warning);
     transition: var(--transition);
 }
