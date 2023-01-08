@@ -86,7 +86,7 @@ Route::view('activities', 'ManageProfile.profile-student')->name('activities');
 Route::view('calendar', 'ManageProfile.profile-student')->name('calendar');
 Route::view('report', 'ManageProfile.profile-student')->name('report');
 Route::view('proposal', 'ManageProfile.profile-student')->name('proposal');
-Route::view('election', 'electioncommittee.ce-student-register')->name('election');
+Route::view('election', 'electioncommittee.ce-student')->name('election');
 Route::view('bulletin', 'ManageProfile.profile-student')->name('bulletin');
 
 // VIEW ROUTES
@@ -119,18 +119,9 @@ Route::post('committee_update', [CommitteeController::class, 'update']);
 Route::get('coordinator-profile', [CoordinatorController::class, 'index']);
 Route::post('coordinator_update', [CoordinatorController::class, 'update']);
 
-Route::redirect('/dhiya', '/');
+//Committee Election Routing
 
-Route::view('/pelajar', 'pelajar',
-    ['nama' => 'dhiya']);
-
-// Route::get('/kelas', function(){
-//     return view('go');
-// });
-
-// Route::post('/kelas', function(){
-//     echo "<h1>POST --  Kelas Programming</h1>";
-// });
+Route::view('electionregister', 'electioncommittee.ce-student-register')->name('electionregister');
 
 Route::get('/cec', function () {
     return view('electioncommittee/ce-committee');

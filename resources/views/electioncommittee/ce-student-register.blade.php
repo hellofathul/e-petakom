@@ -16,7 +16,10 @@ $roles = session()->get('role');
         <br />
         <h1 style="font-size: 1.8rem;">Register As Candidate</h1>
         <button class="electionuploadregister">
-            <img class="file" src="./images/upload-file.png">
+            <form>
+                <input type="image" name="candidateprofileimage" src="./images/upload-file.png" width="60" height="60">
+                <!--<img class="file" src="./images/upload-file.png">-->
+            </form>
         </button>
         <br />
         <a>
@@ -45,12 +48,23 @@ $roles = session()->get('role');
 
                     <br />
 
-
+                    
                     <h4>Position to compete for: </h4>
+                    <select class="eform-select position-dropdown" name="studentposition">
+                                <option selected>Choose position</option>
+                                <option value="Majlis Tertinggi">Majlis Tertinggi</option>
+                                <option value="Portfolio Sukan & Rekreasi">Portfolio Sukan & Rekreasi</option>
+                                <option value="Portfolio Keusahawanan & Logistik">Portfolio Keusahawanan & Logistik</option>
+                                <option value="Portfolio Komuniti Luar & Hubungan Antarabangsa">Portfolio Komuniti Luar & Hubungan Antarabangsa</option>
+                                <option value="Portfolio Hebahan & Publisiti">Portfolio Hebahan & Publisiti</option>
+                                <option value="Portfolio Multimedia">Portfolio Multimedia</option>
+                                <option value="Portfolio Sahsiah & Kebajikan">Portfolio Sahsiah & Kebajikan</option>
+                                <option value="Portfolio Akademik & Kerjaya">Portfolio Akademik & Kerjaya</option>
+                            </select>
                     <br />
                     <h4>Terms & Conditions of becoming a member of the PETAKOM Committee </h4>
                     <br />
-                    <textarea class="terms" label="terms" rows="7">
+                    <textarea class="electionterms" label="terms" rows="7">
 First term
 First term
 First term
