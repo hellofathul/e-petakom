@@ -77,7 +77,7 @@ main section.middle .electionforms__container {
     /*gap: 3rem;*/
 }
 
-main section.middle .electionforms__container>div {
+main section.middle .electionforms__container {
     background: var(--color-white);
     padding: var(--card-padding);
     border-radius: var(--card-border-radius);

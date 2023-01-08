@@ -86,7 +86,7 @@ Route::view('activities', 'ManageProfile.profile-student')->name('activities');
 Route::view('calendar', 'ManageProfile.profile-student')->name('calendar');
 Route::view('report', 'ManageProfile.profile-student')->name('report');
 Route::view('proposal', 'ManageProfile.profile-student')->name('proposal');
-Route::view('election', 'ManageProfile.profile-student')->name('election');
+Route::view('election', 'electioncommittee.ce-student-register')->name('election');
 Route::view('bulletin', 'ManageProfile.profile-student')->name('bulletin');
 
 // VIEW ROUTES
