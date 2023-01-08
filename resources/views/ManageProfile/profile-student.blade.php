@@ -80,12 +80,12 @@ $roles = session()->get('role');
                 </div>
             </div>
             <div class="tertiary__container">
-                <div class="fourth__container">
+                <div class="fourth__container profile__picture__container">
                     <div class="profile__picture">
                         <h1>Profile Picture</h1>
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                                <a href=""><span class="input-group-text" id="inputGroupFileAddon01">Upload</span></a>
                             </div>
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" id="inputGroupFile01"

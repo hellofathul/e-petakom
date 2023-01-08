@@ -392,6 +392,10 @@ main section.middle__container {
     height: 77%;
 }
 
+.profile__picture__container {
+    height: 70%;
+}
+
 .tertiary__container {
     display: grid;
     grid-template-rows: 1fr 1fr;
@@ -614,7 +618,7 @@ select.form-select {
 
 .input-group {
     position: relative;
-    top: 23rem;
+    top: 13.5rem;
 }
 
 /* ======= MEDIA QUERIES FOR TABLETS (REPONSIVE DESIGN) ======== */
