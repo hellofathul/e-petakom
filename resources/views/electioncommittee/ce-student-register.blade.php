@@ -6,11 +6,11 @@ $roles = session()->get('role');
 
 ?>
 
-@extends('layouts.main')
+@extends('layouts.main-election')
 
 @section('content')
-    <div class="header">
-        <h1>Committee Election</h1>
+    <div class="electionheader__container">
+        <h1 class="main__title">Committee Election</h1>
     </div>
     <div class="electionregister__container">
         <br />
