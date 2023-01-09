@@ -10,18 +10,21 @@ $roles = session()->get('role');
 
 @section('content')
             <div class="electionheader__container">
-                <h1>Committee Election</h1>
+                <h1 class="main__title">Committee Election</h1>
             </div>
+            <br>
+            <p class="sub__title">Manage Candidate Registration</p>
             <div class="mainelection__container">
-            <a href="{{route('electionmanageregister')}}">
                 <button class="electionmain">
-                    <h2>Manage Candidate Registration</h2>
+                
+                    <h2>Start Election</h2>
+                
                 </button>
-            </a>
-            <a href="{{route('votingcount')}}">
+
                 <button class="electionmain">
-                    <h2>Voting Count</h2>
+                
+                    <h2>Stop Election</h2>
+                
                 </button>
-            </a>
             </div>
 @endsection

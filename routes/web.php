@@ -120,9 +120,19 @@ Route::post('committee_update', [CommitteeController::class, 'update']);
 Route::get('coordinator-profile', [CoordinatorController::class, 'index']);
 Route::post('coordinator_update', [CoordinatorController::class, 'update']);
 
-//Committee Election Routing
+//----------Committee Election Routing
+//----------
 
+//Student
 Route::view('electionregister', 'electioncommittee.ce-student-register')->name('electionregister');
+Route::view('electionvote', 'electioncommittee.ce-student-vote')->name('electionvote');
+
+//Committee
+Route::view('electionmanage', 'electioncommittee.ce-committee-election')->name('electionmanage');
+
+//Shared Committee/Coordinator
+Route::view('electionmanageregister', 'electioncommittee.ce-manage-registration')->name('electionmanageregister');
+Route::view('votingcount', 'electioncommittee.ce-voting-count')->name('votingcount');
 
 Route::get('/cec', function () {
     return view('electioncommittee/ce-committee');
